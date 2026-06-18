@@ -7,16 +7,7 @@ import java.sql.SQLException;
 public class JDBCConnection {
     private static final String DATABASE = "jdbc:sqlite:database/AboutMe.db";
 
-    public JDBCConnection() {
-        IO.println("Created JDBCConnection Object to work with an ArrayList of Objects");
-    }
-
-    public static Connection testConnection() {
-        try {
-            return DriverManager.getConnection(DATABASE);
-        } catch (SQLException e) {
-            IO.println(e.getMessage());
-            return null;
-        }
+    public static Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(DATABASE);
     }
 }
