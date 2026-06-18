@@ -1,6 +1,5 @@
 package com.alexd.app;
 
-@SuppressWarnings("unused")
 public class Course {
     private int id;
     private int education_id;
@@ -17,5 +16,25 @@ public class Course {
         this.course_name = course_name;
         this.course_code = course_code;
         this.completion_date = DateUtils.formatYearMonth(completion_date);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getEducationId() {
+        return education_id;
+    }
+
+    public String getCourseName() {
+        return course_name;
+    }
+
+    public String getCourseCode() {
+        return course_code;
+    }
+
+    public String getCompletionDate() {
+        return completion_date;
     }
 }
