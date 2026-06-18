@@ -53,7 +53,7 @@ INSERT INTO projects (title, description, github_url, experience_id) VALUES
 ('Plan4Impact', 'Event planning web app focusing on sustainability', 'https://github.com/lieuryan/Plan4Impact', 1);
 
 -- Skills Entries
- INSERT INTO skills (name, category) VALUES
+INSERT INTO skills (name, category) VALUES
 ('Java', 'Programming Language'),
 ('C/C++', 'Programming Language'),
 ('Python', 'Programming Language'),
@@ -106,3 +106,39 @@ INSERT INTO project_skills (project_id, skill_id) VALUES
 (6, 3), (6, 13), (6, 16), (6, 21), (6, 22), (6, 23), (6, 27), (6, 29), (6, 30), (6, 32), (6, 34),
 (7, 2), (7, 15), (7, 27), (7, 29), (7, 32), (7, 34), (7, 35),
 (8, 3), (8, 15), (8, 18), (8, 24), (8, 27), (8, 29), (8, 32), (8, 34), (8, 35),
+(9, 3), (9, 13), (9, 27), (9, 29), (9, 30), (9, 32), (9, 35),
+(10, 8), (10, 15), (10, 18), (10, 27), (10, 29), (10, 32), (10, 35),
+(11, 2), (11, 15), (11, 27), (11, 29), (11, 32), (11, 35),
+(12, 3), (12, 15), (12, 18), (12, 27), (12, 29), (12, 32), (12, 35),
+(13, 1), (13, 13), (13, 18), (13, 26), (13, 27), (13, 28), (13, 29), (13, 31), (13, 35), (13, 36), (13, 37), (13, 38), 
+    (13, 39),
+(14, 3), (14, 15), (14, 18), (14, 23), (14, 27), (14, 29), (14, 32), (14, 34), (14, 35),
+(15, 3), (15, 13), (15, 16), (15, 21), (15, 22), (15, 23), (15, 27), (15, 29),
+(16, 3), (16, 13), (16, 27), (16, 29), (16, 32), (16, 34), (16, 35),
+(17, 2), (17, 15), (17, 18), (17, 26), (17, 27), (17, 28), (17, 29), (17, 31), (17, 32), (17, 34), (17, 35), (17, 37), 
+    (17, 38), (17, 39),
+(18, 10), (18, 15), (18, 18), (18, 27), (18, 29), (18, 32), (18, 34), (18, 35),
+(19, 1), (19, 13), (19, 16), (19, 17), (19, 18), (19, 26), (19, 27), (19, 28), (19, 29), (19, 31), (19, 32), (19, 33), 
+    (19, 34), (19, 35), (19, 36), (19, 37), (19, 38), (19, 39),
+(20, 4), (20, 5), (20, 11), (20, 13), (20, 18), (20, 19), (20, 20), (20, 26), (20, 27), (20, 28), (20, 29), (20, 31), (20, 32), (20, 33), (20, 34), (20, 36), (20, 37), (20, 38), (20, 39);
+
+-- Courses Entries
+INSERT INTO courses (education_id, course_name, course_code, completion_date) VALUES
+(1, 'Cloud Computing', 'COSC2626', '2026-06'),
+(1, 'Innovation Ecosystem and the Future of Work', 'OENG1235', '2026-06'),
+(1, 'Intelligent Decision Making', 'COSC2973', '2026-06'),
+(1, 'Machine Learning', 'COSC2673', '2026-06'),
+(1, 'Artificial Intelligence', 'COSC1127', '2025-11'),
+(1, 'Computing Theory', 'COSC1107', '2025-11'),
+(1, 'Essentials of Computing', 'COSC3045', '2025-11'),
+(1, 'Operating Systems Principles', 'COSC1114', '2025-11'),
+(1, 'Algorithms and Analysis', 'COSC2123', '2025-06'),
+(1, 'Foundations of Artificial Intelligence', 'COSC2960', '2025-06'),
+(1, 'Introduction to Cyber Security', 'INTE2625', '2025-06'),
+(1, 'Software Engineering Fundamentals', 'ISYS1118', '2025-06'),
+(1, 'C++ Programming Studio', 'COSC2804', '2024-11'),
+(1, 'Mathematics for Computing', 'MATH2411', '2024-11'),
+(1, 'C++ Programming Bootcamp', 'COSC2802', '2024-09'),
+(1, 'Java Programming Studio', 'COSC2803', '2024-06'),
+(1, 'Introduction to Mathematics for Computing', 'MATH2466', '2024-06'),
+(1, 'Java Programming Bootcamp', 'COSC2801', '2024-04');
