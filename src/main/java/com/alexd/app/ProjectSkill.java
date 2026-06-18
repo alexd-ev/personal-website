@@ -1,13 +1,13 @@
 package com.alexd.app;
 
-public class ProjectSkills {
+public class ProjectSkill {
     private int project_id;
     private int skill_id;
 
-    public ProjectSkills() {
+    public ProjectSkill() {
     }
 
-    public ProjectSkills(int project_id, int skill_id) {
+    public ProjectSkill(int project_id, int skill_id) {
         this.project_id = project_id;
         this.skill_id = skill_id;
     }
