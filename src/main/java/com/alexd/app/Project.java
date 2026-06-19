@@ -6,21 +6,21 @@ public class Project {
     private int id;
     private String title;
     private String description;
-    private String github_url;
-    private int experience_id;
-    private int education_id;
+    private String githubUrl;
+    private String company;
+    private String institution;
     private ArrayList<String> skills = new ArrayList<>();
 
     public Project() {
     }
 
-    public Project(int id, String title, String description, String github_url, int experience_id, int education_id) {
+    public Project(int id, String title, String description, String github_url, String company, String institution) {
         this.id = id;
         this.title = title;
         this.description = description;
-        this.github_url = github_url;
-        this.experience_id = experience_id;
-        this.education_id = education_id;
+        this.githubUrl = github_url;
+        this.company = company;
+        this.institution = institution;
     }
 
     public int getId() {
@@ -36,15 +36,15 @@ public class Project {
     }
 
     public String getGithubUrl() {
-        return github_url;
+        return githubUrl;
     }
 
-    public int getExperienceId() {
-        return experience_id;
+    public String getCompany() {
+        return company;
     }
 
-    public int getEducationId() {
-        return education_id;
+    public String getInstitution() {
+        return institution;
     }
 
     public ArrayList<String> getProjectSkills() {
