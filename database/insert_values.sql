@@ -87,7 +87,7 @@ INSERT INTO projects (
                      (
                          'Exam Timetabling System',
                          'Scheduled exams to timeslots and rooms',
-                         'URL available upon request',
+                         null,
                          1
                      ),
                      (
@@ -99,7 +99,7 @@ INSERT INTO projects (
                      (
                          'Flight Routing System',
                          'Found cheapest/fastest flights between two cities',
-                         'URL available upon request',
+                         null,
                          1
                      ),
                      (
@@ -117,7 +117,7 @@ INSERT INTO projects (
                      (
                          'Reinforcement Learning',
                          'Trained a Pacman agent to avoid ghosts and get to the exit',
-                         'URL available upon request',
+                         null,
                          1
                      ),
                      (
@@ -129,7 +129,7 @@ INSERT INTO projects (
                      (
                          'Agents in City',
                          'Queried agents to find base and complex items in shops',
-                         'URL available upon request',
+                         null,
                          1
                      ),
                      (
@@ -141,7 +141,7 @@ INSERT INTO projects (
                      (
                          'Pacman Search',
                          'Different heuristis were used so Pacman can find all the food and exit',
-                         'URL available upon request',
+                         null,
                          1
                      ),
                      (
