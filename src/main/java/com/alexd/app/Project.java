@@ -9,7 +9,7 @@ public class Project {
     private String githubUrl;
     private String company;
     private String institution;
-    private ArrayList<String> skills = new ArrayList<>();
+    private ArrayList<String> skillNames = new ArrayList<>();
 
     public Project() {
     }
@@ -48,6 +48,6 @@ public class Project {
     }
 
     public ArrayList<String> getProjectSkills() {
-        return skills;
+        return skillNames;
     }
 }
