@@ -8,20 +8,20 @@ import java.sql.SQLException;
 
 public class Course {
     private int id;
-    private int education_id;
-    private String course_name;
-    private String course_code;
-    private String completion_date;
+    private int educationId;
+    private String courseName;
+    private String courseCode;
+    private String completionDate;
 
     public Course() {
     }
 
-    public Course(int id, int education_id, String course_name, String course_code, String completion_date) {
+    public Course(int id, int educationId, String course_name, String course_code, String completion_date) {
         this.id = id;
-        this.education_id = education_id;
-        this.course_name = course_name;
-        this.course_code = course_code;
-        this.completion_date = DateUtils.formatYearMonth(completion_date);
+        this.educationId = educationId;
+        this.courseName = course_name;
+        this.courseCode = course_code;
+        this.completionDate = DateUtils.formatYearMonth(completion_date);
     }
 
     public int getId() {
@@ -29,19 +29,19 @@ public class Course {
     }
 
     public int getEducationId() {
-        return education_id;
+        return educationId;
     }
 
     public String getCourseName() {
-        return course_name;
+        return courseName;
     }
 
     public String getCourseCode() {
-        return course_code;
+        return courseCode;
     }
 
     public String getCompletionDate() {
-        return completion_date;
+        return completionDate;
     }
 
     public static ArrayList<Course> loadAllCourses(Statement statement) throws SQLException {

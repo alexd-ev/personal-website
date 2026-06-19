@@ -10,8 +10,8 @@ public class Experience {
     private int id;
     private String company;
     private String role;
-    private String start_date;
-    private String end_date;
+    private String startDate;
+    private String endDate;
     private String description;
 
     public Experience() {
@@ -21,8 +21,8 @@ public class Experience {
         this.id = id;
         this.company = company;
         this.role = role;
-        this.start_date = DateUtils.formatYearMonth(start_date);
-        this.end_date = DateUtils.formatYearMonth(end_date);
+        this.startDate = DateUtils.formatYearMonth(start_date);
+        this.endDate = DateUtils.formatYearMonth(end_date);
         this.description = description;
     }
 
@@ -39,11 +39,11 @@ public class Experience {
     }
 
     public String getStartDate() {
-        return start_date;
+        return startDate;
     }
 
     public String getEndDate() {
-        return end_date;
+        return endDate;
     }
 
     public String getDescription() {

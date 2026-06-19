@@ -11,8 +11,8 @@ public class Education {
     private String institution;
     private String degree;
     private String major;
-    private String start_date;
-    private String end_date;
+    private String startDate;
+    private String endDate;
 
     public Education() {
     }
@@ -22,8 +22,8 @@ public class Education {
         this.institution = institution;
         this.degree = degree;
         this.major = major;
-        this.start_date = DateUtils.formatYearMonth(start_date);
-        this.end_date = DateUtils.formatYearMonth(end_date);
+        this.startDate = DateUtils.formatYearMonth(start_date);
+        this.endDate = DateUtils.formatYearMonth(end_date);
     }
 
     public int getId() {
@@ -43,11 +43,11 @@ public class Education {
     }
 
     public String getStartDate() {
-        return start_date;
+        return startDate;
     }
 
     public String getEndDate() {
-        return end_date;
+        return endDate;
     }
 
     public static ArrayList<Education> loadAllEducations(Statement statement) throws SQLException {
