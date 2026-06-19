@@ -1,5 +1,11 @@
 package com.alexd.app;
 
+import java.util.ArrayList;
+
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class Education {
     private int id;
     private String institution;
@@ -42,5 +48,20 @@ public class Education {
 
     public String getEndDate() {
         return end_date;
+    }
+
+    public static ArrayList<Education> loadAllEducations(Statement statement) throws SQLException {
+        ArrayList<Education> educations = new ArrayList<>();
+        String educationsQuery = "SELECT * FROM education";
+        try (ResultSet educationsResults = statement.executeQuery(educationsQuery)) {
+            while (educationsResults.next()) {
+                Education education = new Education(educationsResults.getInt("id"),
+                        educationsResults.getString("institution"), educationsResults.getString("degree"),
+                        educationsResults.getString("major"), educationsResults.getString("start_date"),
+                        educationsResults.getString("end_date"));
+                educations.add(education);
+            }
+        }
+        return educations;
     }
 }
