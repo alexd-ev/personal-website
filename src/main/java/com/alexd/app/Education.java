@@ -1,6 +1,7 @@
 package com.alexd.app;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 import java.sql.Statement;
 import java.sql.ResultSet;
@@ -13,6 +14,7 @@ public class Education {
     private String major;
     private String startDate;
     private String endDate;
+    private ArrayList<String> courseNames = new ArrayList<>();
 
     public Education() {
     }
@@ -50,21 +52,41 @@ public class Education {
         return endDate;
     }
 
+    public ArrayList<String> getCourseNames() {
+        return courseNames;
+    }
+
     public static ArrayList<Education> loadAllEducations(Statement statement) throws SQLException {
-        ArrayList<Education> educations = new ArrayList<>();
+        LinkedHashMap<Integer, Education> educationMap = new LinkedHashMap<>();
         String educationsQuery = """
-                SELECT *
-                  FROM education;
+                SELECT e.id,
+                       e.institution,
+                       e.degree,
+                       e.major,
+                       e.start_date,
+                       e.end_date,
+                       c.course_name
+                  FROM education e
+                       LEFT JOIN
+                       courses c ON e.id = c.education_id
+                 ORDER BY e.start_date DESC,
+                          c.completion_date DESC;
                 """;
         try (ResultSet educationsResults = statement.executeQuery(educationsQuery)) {
             while (educationsResults.next()) {
-                Education education = new Education(educationsResults.getInt("id"),
-                        educationsResults.getString("institution"), educationsResults.getString("degree"),
-                        educationsResults.getString("major"), educationsResults.getString("start_date"),
-                        educationsResults.getString("end_date"));
-                educations.add(education);
+                int educationId = educationsResults.getInt("id");
+                if (!educationMap.containsKey(educationId)) {
+                    Education education = new Education(educationId, educationsResults.getString("institution"),
+                            educationsResults.getString("degree"), educationsResults.getString("major"),
+                            educationsResults.getString("start_date"), educationsResults.getString("end_date"));
+                    educationMap.put(educationId, education);
+                }
+                String courseName = educationsResults.getString("course_name");
+                if (courseName != null) {
+                    educationMap.get(educationId).getCourseNames().add(courseName);
+                }
             }
         }
-        return educations;
+        return new ArrayList<>(educationMap.values());
     }
 }
