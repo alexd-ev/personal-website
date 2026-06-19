@@ -1,5 +1,11 @@
 package com.alexd.app;
 
+import java.util.ArrayList;
+
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class Skill {
     private int id;
     private String name;
@@ -24,5 +30,18 @@ public class Skill {
 
     public String getCategory() {
         return category;
+    }
+
+    public static ArrayList<Skill> loadAllSkills(Statement statement) throws SQLException {
+        ArrayList<Skill> skills = new ArrayList<>();
+        String skillsQuery = "SELECT * FROM skills";
+        try (ResultSet skillsResults = statement.executeQuery(skillsQuery)) {
+            while (skillsResults.next()) {
+                Skill skill = new Skill(skillsResults.getInt("id"), skillsResults.getString("name"),
+                        skillsResults.getString("category"));
+                skills.add(skill);
+            }
+        }
+        return skills;
     }
 }
