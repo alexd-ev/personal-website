@@ -12,6 +12,6 @@ public class DateUtils {
 
         YearMonth ym = YearMonth.parse(completion_date);
 
-        return ym.format(DateTimeFormatter.ofPattern("MMMM yyyy", Locale.ENGLISH));
+        return ym.format(DateTimeFormatter.ofPattern("MMM yyyy", Locale.ENGLISH));
     }
 }
