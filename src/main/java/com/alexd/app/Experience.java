@@ -1,5 +1,11 @@
 package com.alexd.app;
 
+import java.util.ArrayList;
+
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class Experience {
     private int id;
     private String company;
@@ -42,5 +48,20 @@ public class Experience {
 
     public String getDescription() {
         return description;
+    }
+
+    public static ArrayList<Experience> loadAllExperiences(Statement statement) throws SQLException {
+        ArrayList<Experience> experiences = new ArrayList<>();
+        String experiencesQuery = "SELECT * FROM experience";
+        try (ResultSet experiencesResults = statement.executeQuery(experiencesQuery)) {
+            while (experiencesResults.next()) {
+                Experience experience = new Experience(experiencesResults.getInt("id"),
+                        experiencesResults.getString("company"), experiencesResults.getString("role"),
+                        experiencesResults.getString("start_date"), experiencesResults.getString("end_date"),
+                        experiencesResults.getString("description"));
+                experiences.add(experience);
+            }
+        }
+        return experiences;
     }
 }
