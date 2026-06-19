@@ -52,7 +52,10 @@ public class Experience {
 
     public static ArrayList<Experience> loadAllExperiences(Statement statement) throws SQLException {
         ArrayList<Experience> experiences = new ArrayList<>();
-        String experiencesQuery = "SELECT * FROM experience";
+        String experiencesQuery = """
+                SELECT *
+                  FROM experience;
+                """;
         try (ResultSet experiencesResults = statement.executeQuery(experiencesQuery)) {
             while (experiencesResults.next()) {
                 Experience experience = new Experience(experiencesResults.getInt("id"),

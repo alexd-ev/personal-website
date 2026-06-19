@@ -52,7 +52,10 @@ public class Education {
 
     public static ArrayList<Education> loadAllEducations(Statement statement) throws SQLException {
         ArrayList<Education> educations = new ArrayList<>();
-        String educationsQuery = "SELECT * FROM education";
+        String educationsQuery = """
+                SELECT *
+                  FROM education;
+                """;
         try (ResultSet educationsResults = statement.executeQuery(educationsQuery)) {
             while (educationsResults.next()) {
                 Education education = new Education(educationsResults.getInt("id"),

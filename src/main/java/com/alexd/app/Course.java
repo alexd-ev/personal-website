@@ -46,7 +46,10 @@ public class Course {
 
     public static ArrayList<Course> loadAllCourses(Statement statement) throws SQLException {
         ArrayList<Course> courses = new ArrayList<>();
-        String coursesQuery = "SELECT * FROM courses";
+        String coursesQuery = """
+                SELECT *
+                  FROM courses;
+                """;
         try (ResultSet courseResults = statement.executeQuery(coursesQuery)) {
             while (courseResults.next()) {
                 Course course = new Course(courseResults.getInt("id"), courseResults.getInt("education_id"),
