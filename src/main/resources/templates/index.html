@@ -13,7 +13,19 @@
     </head>
 
     <body>
-        <p>Hello, World!</p>
+        <main class="portfolio-container">
+            <h1>Courses</h1>
+            <div class="course-card" th:each="course : ${courses}">
+                <div class="course-header">
+                    <span class="course-code"
+                        th:text="${course.courseCode}">COSC2626</span>
+                    <span class="course-date"
+                        th:text="${course.completionDate}">Jun 2026</span>
+                </div>
+                <h3 class="course-name" th:text="${course.courseName}">Cloud
+                    Computing</h3>
+            </div>
+        </main>
     </body>
 
 </html>
