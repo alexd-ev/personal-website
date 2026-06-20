@@ -37,7 +37,7 @@
             <version>2.0.18</version>
         </dependency>
 
-        <!-- Thymeleaf Rendering-->
+        <!-- Thymeleaf Rendering -->
         <dependency>
             <groupId>io.javalin</groupId>
             <artifactId>javalin-rendering-thymeleaf</artifactId>
