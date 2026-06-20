@@ -11,7 +11,7 @@ public class PageIndex implements Handler {
 
     @Override
     public void handle(Context context) throws Exception {
-        HashMap<String, Object> model = new HashMap<String, Object>();
-        context.render(INDEX_TEMPLATE, model);
+        HashMap<String, Object> indexModel = new HashMap<>();
+        context.render(INDEX_TEMPLATE, indexModel);
     }
 }

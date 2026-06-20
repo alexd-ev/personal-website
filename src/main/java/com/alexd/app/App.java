@@ -12,7 +12,7 @@ public class App {
             config.registerPlugin(new RouteOverviewPlugin(pluginConfig -> {
                 pluginConfig.path = "/help/routes";
             }));
-            // config.staticFiles.add("/public");
+            config.staticFiles.add("public/");
             config.fileRenderer(new JavalinThymeleaf());
             config.routes.get(PageIndex.INDEX_URL, new PageIndex());
         }).start(JAVALIN_PORT);
