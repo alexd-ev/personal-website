@@ -1,3 +1,108 @@
+@import url("https://fonts.cdnfonts.com/css/avenir");
+@import url("https://fonts.cdnfonts.com/css/roboto");
+
+:root {
+    --font-family: Avenir, Roboto, sans-serif;
+    --text-primary: #1a202c;
+    --bg-primary: #ffffff;
+    --border-color: #cbd5e0;
+
+    --tab-bg: #f7fafc;
+    --tab-border: #cbd5e0;
+    --tab-hover-bg: #0066CC;
+    --tab-hover-text: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #121212;
+        --text-primary: #f7fafc;
+        --border-color: #2d3748;
+
+        --tab-bg: #1e1e1e;
+        --tab-border: #4a5568;
+        --tab-hover-bg: #0066CC;
+        --tab-hover-text: #ffffff;
+    }
+}
+
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: var(--font-family);
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem 2rem 0;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem;
+    list-style: none;
+}
+
+.navbar li {
+    display: block;
+}
+
+.navbar a {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--text-primary);
+    background-color: var(--tab-bg);
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--tab-border);
+    border-bottom: none;
+    border-radius: 0.4rem 0.4rem 0 0;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.navbar a:hover {
+    background-color: var(--tab-hover-bg);
+    color: var(--tab-hover-text);
+    border-color: var(--tab-hover-bg);
+}
+
+.main-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+section {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+section h2 {
+    margin-bottom: 1rem;
+    color: var(--tab-hover-bg);
 }

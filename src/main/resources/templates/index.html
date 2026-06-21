@@ -8,23 +8,35 @@
             content="Professional computer science portfolio showcasing my various projects, and experiences.">
         <meta name="theme-color" content="#0066CC">
         <meta name="color-scheme" content="light dark">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="/css/style.css">
         <title>Alexander (Alex) Davidson | Computer Scientist Portfolio</title>
     </head>
 
     <body>
-        <main class="portfolio-container">
-            <h1>Courses</h1>
-            <div class="course-card" th:each="course : ${courses}">
-                <div class="course-header">
-                    <span class="course-code"
-                        th:text="${course.courseCode}">COSC2626</span>
-                    <span class="course-date"
-                        th:text="${course.completionDate}">Jun 2026</span>
-                </div>
-                <h3 class="course-name" th:text="${course.courseName}">Cloud
-                    Computing</h3>
-            </div>
+        <header>
+            <nav class="nav-container">
+                <ul class="navbar">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main-container">
+            <section id="about">
+                <h2>About Me</h2>
+                <p>I am a third year undergraduate student studying Bachelor of
+                    Computer Science (Professional) at RMIT University. I have a
+                    passion for working with computers and all things tech. I
+                    have learnt many aspects of computing, including programming
+                    paradigms, popular algorithms, computational theory,
+                    artificial intelligence, operating systems principles and
+                    more.</p>
+            </section>
         </main>
     </body>
 
