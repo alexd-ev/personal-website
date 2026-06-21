@@ -65,15 +65,17 @@
                         </div>
                         <div class="experience-card-header">
                             <div class="title-wrapper">
-                                <h3 th:text="${experience.company}">
-                                </h3>
-                                <h4 th:text="${experience.role}"></h4>
+                                <h3 th:text="${experience.company}">RMIT</h3>
+                                <h4 th:text="${experience.role}">Computer
+                                    Scientist Intern</h4>
                                 <span class="timeline-badge"
-                                    th:text="${experience.startDate} + ' - ' + ${experience.endDate}"></span>
+                                    th:text="${experience.startDate} + ' - ' + ${experience.endDate}">Mar
+                                    2026 - Jun 2026</span>
                             </div>
                         </div>
                         <p class="job-description"
-                            th:text="${experience.description}"></p>
+                            th:text="${experience.description}">Mainly software
+                            engineering projects</p>
                     </div>
                 </div>
             </section>
