@@ -21,15 +21,15 @@ INSERT INTO experience (
                            'Gained an understanding of map analysis techniques, such as accuracy of precise location of queried results'
                        ),
                        (
-                           'Packing Assistant',
                            'Longhurst''s Bakery',
+                           'Packing Assistant',
                            '2022-11',
                            '2022-11',
                            'Assisted in packing bagels for delivery to nearby shops'
                        ),
                        (
-                           'Assistant Cashier',
                            'Burgertory',
+                           'Assistant Cashier',
                            '2021-12',
                            '2021-12',
                            'Assisted in taking and serving orders and cleaned trays'
