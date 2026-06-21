@@ -3,13 +3,13 @@
 
 :root {
     --font-family: Avenir, Roboto, sans-serif;
-    --text-primary: #1a202c;
     --bg-primary: #ffffff;
+    --text-primary: #1a202c;
     --border-color: #cbd5e0;
 
     --tab-bg: #f7fafc;
     --tab-border: #cbd5e0;
-    --tab-hover-bg: #0066CC;
+    --tab-hover-bg: #0c4364;
     --tab-hover-text: #ffffff;
 }
 
@@ -21,7 +21,7 @@
 
         --tab-bg: #1e1e1e;
         --tab-border: #4a5568;
-        --tab-hover-bg: #0066CC;
+        --tab-hover-bg: #3182ce;
         --tab-hover-text: #ffffff;
     }
 }
@@ -102,7 +102,48 @@ section {
     border-bottom: 1px solid var(--border-color);
 }
 
+section h1,
 section h2 {
     margin-bottom: 1rem;
     color: var(--tab-hover-bg);
+}
+
+.hello-box {
+    background-color: var(--tab-bg);
+    border-left: 4px solid var(--tab-hover-bg);
+    padding: 1rem 1.5rem;
+    margin-top: 1rem;
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-family: monospace;
+}
+
+.hello-box span {
+    color: var(--tab-hover-bg);
+    font-weight: bold;
+}
+
+.profile-pic {
+    float: right;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.6rem;
+    border: 1px solid var(--border-color);
+    margin-left: 2rem;
+}
+
+.about-content::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media (max-width: 600px) {
+    .profile-pic {
+        float: none;
+        display: block;
+        margin: 0 auto 1.5rem;
+        width: 160px;
+        height: 160px;
+    }
 }
