@@ -18,12 +18,13 @@ public class PageIndex implements Handler {
         try (Connection connection = JDBCConnection.getConnection();
                 Statement statement = JDBCConnection.getStatement(connection)) {
 
-            ArrayList<Experience> experience = Experience.loadAllExperiences(statement);
+            ArrayList<Experience> experiences = Experience.loadAllExperiences(statement);
             ArrayList<Education> educations = Education.loadAllEducations(statement);
             ArrayList<Project> projectSkills = ProjectSkill.loadAllProjectSkills(statement);
             ArrayList<Course> courses = Course.loadAllCourses(statement);
 
             HashMap<String, Object> indexModel = new HashMap<>();
+            indexModel.put("experiences", experiences);
             context.render(INDEX_TEMPLATE, indexModel);
         }
     }

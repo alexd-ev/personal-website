@@ -54,7 +54,8 @@ public class Experience {
         ArrayList<Experience> experiences = new ArrayList<>();
         String experiencesQuery = """
                 SELECT *
-                  FROM experience;
+                  FROM experience
+                 ORDER BY start_date DESC;
                 """;
         try (ResultSet experiencesResults = statement.executeQuery(experiencesQuery)) {
             while (experiencesResults.next()) {

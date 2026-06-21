@@ -35,10 +35,10 @@
                 </div>
             </section>
             <section id="about">
+                <h2>About Me</h2>
                 <div class="about-content">
-                    <img src="images/profile.jpg" alt="Alex Davidson"
+                    <img src="/images/profile.jpg" alt="Alex Davidson Picture"
                         class="profile-pic">
-                    <h2>About Me</h2>
                     <p>I am a third year undergraduate student studying Bachelor
                         of
                         Computer Science (Professional) at RMIT University. I
@@ -51,6 +51,30 @@
                         artificial intelligence, operating systems principles
                         and
                         more.</p>
+                </div>
+            </section>
+            <section id="experience">
+                <h2>Experience</h2>
+                <div class="experience-deck">
+                    <div class="experience-card"
+                        th:each="experience : ${experiences}">
+                        <div class="logo-wrapper">
+                            <img th:src="'/images/' + ${#strings.toLowerCase(#strings.replace(experience.company, ' ', '-'))} + '.png'"
+                                th:alt="${experience.company} + ' Logo'"
+                                class="company-logo">
+                        </div>
+                        <div class="experience-card-header">
+                            <div class="title-wrapper">
+                                <h3 th:text="${experience.company}">
+                                </h3>
+                                <h4 th:text="${experience.role}"></h4>
+                                <span class="timeline-badge"
+                                    th:text="${experience.startDate} + ' - ' + ${experience.endDate}"></span>
+                            </div>
+                        </div>
+                        <p class="job-description"
+                            th:text="${experience.description}"></p>
+                    </div>
                 </div>
             </section>
         </main>
