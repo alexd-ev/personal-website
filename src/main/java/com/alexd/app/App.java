@@ -7,7 +7,7 @@ import io.javalin.plugin.bundled.RouteOverviewPlugin;
 import io.javalin.rendering.template.JavalinThymeleaf;
 
 public class App {
-    public static final int JAVALIN_PORT = 7000;
+    public static final int JAVALIN_PORT = 7001;
 
     void main() {
         Javalin.create(config -> {
