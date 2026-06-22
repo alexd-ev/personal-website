@@ -20,14 +20,14 @@ public class PageIndex implements Handler {
 
             ArrayList<Experience> experiences = Experience.loadAllExperiences(statement);
             ArrayList<Education> educations = Education.loadAllEducations(statement);
-            ArrayList<Project> project = ProjectSkill.loadAllProjects(statement);
+            ArrayList<Project> projects = Project.loadAllProjects(statement);
             ArrayList<Skill> skills = Skill.loadAllSkills(statement);
             ArrayList<Course> courses = Course.loadAllCourses(statement);
 
             HashMap<String, Object> indexModel = new HashMap<>();
             indexModel.put("experiences", experiences);
             indexModel.put("educations", educations);
-            indexModel.put("project", project);
+            indexModel.put("project", projects);
             indexModel.put("skills", skills);
             indexModel.put("courses", courses);
             context.render(INDEX_TEMPLATE, indexModel);
