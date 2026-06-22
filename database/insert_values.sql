@@ -75,7 +75,7 @@ INSERT INTO projects (
                      VALUES (
                          'Image Classification',
                          'Classified colon cell images as cancerous or not, as well as the cell type',
-                         'https://github.com/alex-dav/Image-Classification1',
+                         'https://github.com/alex-dav/Image-Classification',
                          1
                      ),
                      (

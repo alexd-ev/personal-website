@@ -21,6 +21,7 @@
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#courses">Courses</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -55,7 +56,7 @@
             </section>
             <section id="experience">
                 <h2>Experience</h2>
-                <div class="deck">
+                <div class="experience-deck">
                     <div class="experience-card"
                         th:each="experience : ${experiences}">
                         <div class="logo-wrapper">
@@ -63,7 +64,7 @@
                                 th:alt="${experience.company} + ' Logo'"
                                 class="logo">
                         </div>
-                        <div class="card-header">
+                        <div class="experience-card-header">
                             <div class="title-wrapper">
                                 <h3 th:text="${experience.company}">RMIT</h3>
                                 <h4 th:text="${experience.role}">Computer
@@ -80,16 +81,16 @@
                 </div>
             </section>
             <section id="education">
-                <h2>Edcuation</h2>
-                <div class="deck">
+                <h2>Education</h2>
+                <div class="education-deck">
                     <div class="education-card"
                         th:each="education : ${educations}">
-                        <div class="card-header">
-                            <div class="logo-wrapper">
-                                <img th:src="'/images/' + ${#strings.toLowerCase(#strings.replace(education.institution, ' ', '-'))} + '.png'"
-                                    th:alt="${education.institution} + ' Logo'"
-                                    class="logo">
-                            </div>
+                        <div class="logo-wrapper">
+                            <img th:src="'/images/' + ${#strings.toLowerCase(#strings.replace(education.institution, ' ', '-'))} + '.png'"
+                                th:alt="${education.institution} + ' Logo'"
+                                class="logo">
+                        </div>
+                        <div class="education-card-header">
                             <div class="title-wrapper">
                                 <h3 th:text="${education.institution}">RMIT
                                     University</h3>
@@ -116,6 +117,52 @@
                                     </li>
                                 </ul>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="projects">
+                <h2>Projects</h2>
+                <div class="project-deck">
+                    <div class="project-card" th:each="project : ${projects}">
+                        <div class="project-card-header">
+                            <div class="title-wrapper">
+                                <h3 th:text="${project.title}">Project Title
+                                </h3>
+                                <div class="project-context">
+                                    <span class="context-badge work"
+                                        th:if="${project.company != null}">🟣
+                                        <span
+                                            th:text="${project.company}">Company</span>
+                                    </span>
+                                    <span class="context-badge academic"
+                                        th:if="${project.institution != null}">🔴
+                                        <span
+                                            th:text="${project.institution}">RMIT
+                                            University</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="job-description"
+                            th:text="${project.description}">Java backend with
+                            thymeleaf front end</p>
+                        <div class="project-skills-wrapper">
+                            <div class="skills-pills-list">
+                                <span class="skill-pill"
+                                    th:each="skill : ${project.skills}"
+                                    th:text="${skill}">Java</span>
+                            </div>
+                        </div>
+                        <div class="project-footer"
+                            th:if="${project.githubUrl != null}">
+                            <a th:href="${project.githubUrl}" target="_blank"
+                                class="github-btn">View Code Repository</a>
+                        </div>
+                        <div class="project-footer"
+                            th:if="${project.githubUrl == null}">
+                            <p class="github-btn">Code Repository available upon
+                                request</p>
                         </div>
                     </div>
                 </div>
