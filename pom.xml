@@ -41,6 +41,7 @@
             <version>7.2.2</version>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -52,6 +53,7 @@
                     <commandlineArgs>--enable-native-access=ALL-UNNAMED --sun-misc-unsafe-memory-access=allow</commandlineArgs>
                 </configuration>
             </plugin>
+            
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.15.0</version>
