@@ -1,6 +1,7 @@
 package com.alexd.app;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.HashMap;
 
 import java.sql.Connection;
@@ -21,14 +22,14 @@ public class PageIndex implements Handler {
             ArrayList<Experience> experiences = Experience.loadAllExperiences(statement);
             ArrayList<Education> educations = Education.loadAllEducations(statement);
             ArrayList<Project> projects = Project.loadAllProjects(statement);
-            ArrayList<Skill> skills = Skill.loadAllSkills(statement);
+            LinkedHashMap<String, ArrayList<Skill>> skillsByCategory = Skill.loadAllSkillsByCategory(statement);
             ArrayList<Course> courses = Course.loadAllCourses(statement);
 
             HashMap<String, Object> indexModel = new HashMap<>();
             indexModel.put("experiences", experiences);
             indexModel.put("educations", educations);
             indexModel.put("projects", projects);
-            indexModel.put("skills", skills);
+            indexModel.put("skills", skillsByCategory);
             indexModel.put("courses", courses);
             context.render(INDEX_TEMPLATE, indexModel);
         }

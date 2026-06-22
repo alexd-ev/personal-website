@@ -207,43 +207,43 @@ INSERT INTO skills (
                    )
                    VALUES (
                        'Java',
-                       'Programming Language'
+                       'Programming Languages'
                    ),
                    (
                        'C/C++',
-                       'Programming Language'
+                       'Programming Languages'
                    ),
                    (
                        'Python',
-                       'Programming Language'
+                       'Programming Languages'
                    ),
                    (
                        'HTML',
-                       'Programming Language'
+                       'Programming Languages'
                    ),
                    (
                        'CSS',
-                       'Programming Language'
+                       'Programming Languages'
                    ),
                    (
                        'SQL',
-                       'Programming Language'
+                       'Programming Languages'
                    ),
                    (
                        'OCaml',
-                       'Programming Language'
+                       'Programming Languages'
                    ),
                    (
                        'Prolog',
-                       'Programming Language'
+                       'Programming Languages'
                    ),
                    (
                        'Answer Set Programming',
-                       'Programming Language'
+                       'Programming Languages'
                    ),
                    (
                        'LC3 Assembly',
-                       'Programming Language'
+                       'Programming Languages'
                    ),
                    (
                        'AWS',

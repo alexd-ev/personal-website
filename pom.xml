@@ -22,30 +22,25 @@
             <artifactId>sqlite-jdbc</artifactId>
             <version>3.53.2.0</version>
         </dependency>
-
         <!-- Javalin Dependencies -->
         <dependency>
             <groupId>io.javalin</groupId>
             <artifactId>javalin</artifactId>
             <version>7.2.2</version>
         </dependency>
-
         <!-- Logging -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>2.0.18</version>
         </dependency>
-
         <!-- Thymeleaf Rendering -->
         <dependency>
             <groupId>io.javalin</groupId>
             <artifactId>javalin-rendering-thymeleaf</artifactId>
             <version>7.2.2</version>
         </dependency>
-
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -57,7 +52,6 @@
                     <commandlineArgs>--enable-native-access=ALL-UNNAMED --sun-misc-unsafe-memory-access=allow</commandlineArgs>
                 </configuration>
             </plugin>
-            
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.15.0</version>

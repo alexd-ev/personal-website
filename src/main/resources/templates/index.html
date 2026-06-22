@@ -168,6 +168,34 @@
                     </div>
                 </div>
             </section>
+            <section id="skills">
+                <h2>Skills</h2>
+
+                <div class="skills-dropdown-wrapper">
+
+                    <!-- Loop through each Category entry in our LinkedHashMap -->
+                    <details class="skills-dropdown"
+                        th:each="entry : ${skills}">
+                        <!-- The visible toggle title header -->
+                        <summary class="dropdown-summary">
+                            <span class="dropdown-title"
+                                th:text="${entry.key}">Backend</span>
+                            <span class="dropdown-arrow">▾</span>
+                        </summary>
+
+                        <!-- Hidden Content: Reveals your custom skill badges when clicked open -->
+                        <div class="dropdown-content">
+                            <div class="skills-pills-list">
+                                <!-- Inner Loop: Grabs the array list value assigned to this specific key -->
+                                <span class="skill-pill"
+                                    th:each="skill : ${entry.value}"
+                                    th:text="${skill.name}">Java</span>
+                            </div>
+                        </div>
+                    </details>
+
+                </div>
+            </section>
         </main>
     </body>
 
