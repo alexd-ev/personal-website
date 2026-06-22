@@ -165,30 +165,38 @@ section h2 {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding: 8px 0 1rem 0;
+    -webkit-overflow-scrolling: touch;
 }
 
 .project-deck {
     justify-content: flex-start;
     padding: 8px 1.5rem 1rem 1.5rem;
-    -webkit-overflow-scrolling: touch;
 }
 
+.experience-deck::-webkit-scrollbar,
+.education-deck::-webkit-scrollbar,
 .project-deck::-webkit-scrollbar {
     height: 8px;
     display: block;
 }
 
+.experience-deck::-webkit-scrollbar,
+.education-deck::-webkit-scrollbar-track,
 .project-deck::-webkit-scrollbar-track {
     background: rgba(0, 0, 0, 0.05);
     border-radius: 10px;
 }
 
+.experience-deck::-webkit-scrollbar-thumb,
+.education-deck::-webkit-scrollbar-thumb,
 .project-deck::-webkit-scrollbar-thumb {
     background-color: var(--border-color);
     border-radius: 10px;
     border: 1px solid transparent;
 }
 
+.experience-deck::-webkit-scrollbar-thumb:hover,
+.education-deck::-webkit-scrollbar-thumb:hover,
 .project-deck::-webkit-scrollbar-thumb:hover {
     background-color: var(--tab-hover-bg);
 }
@@ -205,7 +213,7 @@ section h2 {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     height: 100%;
     min-height: 420px;
 }
@@ -238,7 +246,10 @@ section h2 {
 
 /* Mobile override */
 @media (max-width: 500px) {
-    .deck {
+
+    .experience-deck,
+    .education-deck,
+    .project-deck {
         justify-content: flex-start;
         padding-left: 1rem;
         padding-right: 1rem;
