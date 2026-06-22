@@ -9,6 +9,9 @@
         <meta name="theme-color" content="#0c4364">
         <meta name="color-scheme" content="light dark">
         <link rel="stylesheet" href="/css/style.css">
+        <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
+        <link href="https://fonts.cdnfonts.com/css/avenir" rel="stylesheet">
+        <link href="https://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
         <title>Alexander (Alex) Davidson | Computer Scientist Portfolio</title>
     </head>
 
@@ -35,6 +38,7 @@
                                 Alex</strong></span></p>
                 </div>
             </section>
+
             <section id="about">
                 <h2>About Me</h2>
                 <div class="about-content">
@@ -54,17 +58,17 @@
                         more.</p>
                 </div>
             </section>
+
             <section id="experience">
                 <h2>Experience</h2>
-                <div class="experience-deck">
-                    <div class="experience-card"
-                        th:each="experience : ${experiences}">
+                <div class="card-deck">
+                    <div class="card" th:each="experience : ${experiences}">
                         <div class="logo-wrapper">
                             <img th:src="'/images/' + ${#strings.toLowerCase(#strings.replace(experience.company, ' ', '-'))} + '.png'"
                                 th:alt="${experience.company} + ' Logo'"
                                 class="logo">
                         </div>
-                        <div class="experience-card-header">
+                        <div class="card-header">
                             <div class="title-wrapper">
                                 <h3 th:text="${experience.company}">RMIT</h3>
                                 <h4 th:text="${experience.role}">Computer
@@ -80,17 +84,17 @@
                     </div>
                 </div>
             </section>
+
             <section id="education">
                 <h2>Education</h2>
-                <div class="education-deck">
-                    <div class="education-card"
-                        th:each="education : ${educations}">
+                <div class="card-deck">
+                    <div class="card" th:each="education : ${educations}">
                         <div class="logo-wrapper">
                             <img th:src="'/images/' + ${#strings.toLowerCase(#strings.replace(education.institution, ' ', '-'))} + '.png'"
                                 th:alt="${education.institution} + ' Logo'"
                                 class="logo">
                         </div>
-                        <div class="education-card-header">
+                        <div class="card-header">
                             <div class="title-wrapper">
                                 <h3 th:text="${education.institution}">RMIT
                                     University</h3>
@@ -121,11 +125,12 @@
                     </div>
                 </div>
             </section>
+
             <section id="projects">
                 <h2>Projects</h2>
-                <div class="project-deck">
-                    <div class="project-card" th:each="project : ${projects}">
-                        <div class="project-card-header">
+                <div class="card-deck project-deck">
+                    <div class="card" th:each="project : ${projects}">
+                        <div class="card-header">
                             <div class="title-wrapper">
                                 <h3 th:text="${project.title}">Artificial
                                     Intelligence Project</h3>
@@ -158,6 +163,7 @@
                         <div class="project-footer"
                             th:if="${project.githubUrl != null}">
                             <a th:href="${project.githubUrl}" target="_blank"
+                                rel="noopener noreferrer"
                                 class="github-btn">View Code Repository</a>
                         </div>
                         <div class="project-footer"
@@ -168,32 +174,46 @@
                     </div>
                 </div>
             </section>
+
             <section id="skills">
                 <h2>Skills</h2>
-
                 <div class="skills-dropdown-wrapper">
-
-                    <!-- Loop through each Category entry in our LinkedHashMap -->
                     <details class="skills-dropdown"
-                        th:each="entry : ${skills}">
-                        <!-- The visible toggle title header -->
+                        th:each="category : ${skillsByCategory}">
                         <summary class="dropdown-summary">
                             <span class="dropdown-title"
-                                th:text="${entry.key}">Backend</span>
+                                th:text="${category.key}">Backend</span>
                             <span class="dropdown-arrow">▾</span>
                         </summary>
-
-                        <!-- Hidden Content: Reveals your custom skill badges when clicked open -->
                         <div class="dropdown-content">
                             <div class="skills-pills-list">
-                                <!-- Inner Loop: Grabs the array list value assigned to this specific key -->
                                 <span class="skill-pill"
-                                    th:each="skill : ${entry.value}"
+                                    th:each="skill : ${category.value}"
                                     th:text="${skill.name}">Java</span>
                             </div>
                         </div>
                     </details>
+                </div>
+            </section>
 
+            <section id="courses">
+                <h2>Courses</h2>
+                <div class="card-deck course-deck">
+                    <div class="card" th:each="course : ${courses}">
+                        <div class="card-header">
+                            <div class="title-wrapper">
+                                <h3 th:text="${course.courseName}">Introduction
+                                    to Computer Science</h3>
+                                <div class="course-meta-row">
+                                    <span class="context-badge"
+                                        th:text="${course.courseCode}">COSC1010</span>
+                                    <span class="timeline-badge"
+                                        th:text="${course.completionDate}">Nov
+                                        2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>

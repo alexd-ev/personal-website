@@ -49,6 +49,7 @@ public class Course {
         String coursesQuery = """
                 SELECT *
                   FROM courses;
+                 ORDER BY completion_date DESC;
                 """;
         try (ResultSet courseResults = statement.executeQuery(coursesQuery)) {
             while (courseResults.next()) {

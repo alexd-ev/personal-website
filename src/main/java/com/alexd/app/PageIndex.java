@@ -29,7 +29,7 @@ public class PageIndex implements Handler {
             indexModel.put("experiences", experiences);
             indexModel.put("educations", educations);
             indexModel.put("projects", projects);
-            indexModel.put("skills", skillsByCategory);
+            indexModel.put("skillsByCategory", skillsByCategory);
             indexModel.put("courses", courses);
             context.render(INDEX_TEMPLATE, indexModel);
         }
