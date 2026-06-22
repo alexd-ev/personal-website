@@ -31,7 +31,8 @@
             <section id="home">
                 <h1>Welcome to My Portfolio Website!</h1>
                 <div class="hello-box">
-                    <p>Hello, World! <br> <span>— From Alex</span></p>
+                    <p>Hello, World! <br> <span><strong>— From
+                                Alex</strong></span></p>
                 </div>
             </section>
             <section id="about">
@@ -55,15 +56,15 @@
             </section>
             <section id="experience">
                 <h2>Experience</h2>
-                <div class="experience-deck">
+                <div class="deck">
                     <div class="experience-card"
                         th:each="experience : ${experiences}">
                         <div class="logo-wrapper">
                             <img th:src="'/images/' + ${#strings.toLowerCase(#strings.replace(experience.company, ' ', '-'))} + '.png'"
                                 th:alt="${experience.company} + ' Logo'"
-                                class="company-logo">
+                                class="logo">
                         </div>
-                        <div class="experience-card-header">
+                        <div class="card-header">
                             <div class="title-wrapper">
                                 <h3 th:text="${experience.company}">RMIT</h3>
                                 <h4 th:text="${experience.role}">Computer
@@ -76,6 +77,49 @@
                         <p class="job-description"
                             th:text="${experience.description}">Mainly software
                             engineering projects</p>
+                    </div>
+                </div>
+            </section>
+            <section id="education">
+                <h2>Edcuation</h2>
+                <div class="deck">
+                    <div class="education-card"
+                        th:each="education : ${educations}">
+                        <div class="card-header">
+                            <div class="logo-wrapper">
+                                <img th:src="'/images/' + ${#strings.toLowerCase(#strings.replace(education.institution, ' ', '-'))} + '.png'"
+                                    th:alt="${education.institution} + ' Logo'"
+                                    class="logo">
+                            </div>
+                            <div class="title-wrapper">
+                                <h3 th:text="${education.institution}">RMIT
+                                    University</h3>
+                                <p class="degree">
+                                    <span th:text="${education.degree}">Bachelor
+                                        of Computer Science</span>
+                                    <span> in
+                                        <strong
+                                            th:text="${education.major}">Advanced
+                                            Computer Science</strong></span>
+                                </p>
+                                <span class="timeline-badge"
+                                    th:text="${education.startDate} + ' - ' + ${education.endDate}">Mar
+                                    2024 - Present</span>
+                            </div>
+                        </div>
+
+                        <div class="modules-section"
+                            th:if="${!education.courseNames.isEmpty()}">
+                            <h5>Completed Courses:</h5>
+                            <div class="modules-scroll-container">
+                                <ul class="modules-grid">
+                                    <li th:each="courseName : ${education.courseNames}"
+                                        th:text="${courseName}">Cloud Computing
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>

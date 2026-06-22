@@ -25,6 +25,7 @@ public class PageIndex implements Handler {
 
             HashMap<String, Object> indexModel = new HashMap<>();
             indexModel.put("experiences", experiences);
+            indexModel.put("educations", educations);
             context.render(INDEX_TEMPLATE, indexModel);
         }
     }

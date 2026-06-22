@@ -11,7 +11,7 @@ INSERT INTO experience (
                            'Tech Bootcamp Participant',
                            '2026-02',
                            '2026-02',
-                           'Participated in a 4-day tech bootcamp, learning about the use of agentic AI to tackle real-world business problems'
+                           'Participated in a 4-day tech bootcamp, learned about the use of agentic AI to tackle real-world business problems'
                        ),
                        (
                            'Peroptyx',
