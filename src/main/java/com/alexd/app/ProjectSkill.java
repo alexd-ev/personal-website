@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ProjectSkill {
-    public static ArrayList<Project> loadAllProjectSkills(Statement statement) throws SQLException {
+    public static ArrayList<Project> loadAllProjects(Statement statement) throws SQLException {
         LinkedHashMap<Integer, Project> projectMap = new LinkedHashMap<>();
         String projectSkillsQuery = """
                 SELECT p.id,
@@ -41,7 +41,7 @@ public class ProjectSkill {
                     projectMap.put(projectId, project);
                 }
                 String skillName = projectSkillsResults.getString("name");
-                projectMap.get(projectId).getProjectSkills().add(skillName);
+                projectMap.get(projectId).getSkills().add(skillName);
             }
         }
         return new ArrayList<>(projectMap.values());

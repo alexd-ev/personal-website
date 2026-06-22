@@ -47,7 +47,7 @@ public class Project {
         return institution;
     }
 
-    public ArrayList<String> getProjectSkills() {
+    public ArrayList<String> getSkills() {
         return skillNames;
     }
 }
