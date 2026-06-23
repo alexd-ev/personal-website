@@ -1,0 +1,21 @@
+id,title,description,github_url,experience_id,education_id
+1,Image Classification,"Classified colon cell images as cancerous or not, as well as the cell type",https://github.com/alex-dav/Image-Classification,,1
+2,AWS Cloud System Development,Song subscription web app implemented on three backends,https://github.com/alex-dav/AWS-Cloud-System-Development,,1
+3,Exam Timetabling System,Scheduled exams to timeslots and rooms,,,1
+4,Machine Learning Classification and Model Comparison,Classified fire intensity level of wildfire events,https://github.com/alex-dav/Machine-Learning-Classification-and-Model-Comparison,,1
+5,Flight Routing System,Found cheapest/fastest flights between two cities,,,1
+6,Machine Learning Pipeline,Predicted nightly prices of Airbnbs based on various features,https://github.com/alex-dav/Machine-Learning-Pipeline,,1
+7,Memory Allocation,Simulated malloc and free functions using a custom memory allocator with two approaches,https://github.com/alex-dav/Memory-Allocation,,1
+8,Reinforcement Learning,Trained a Pacman agent to avoid ghosts and get to the exit,,,1
+9,Travelling Salesperson Problem,Implemented three algorithms for solving the problem,https://github.com/alex-dav/Travelling-Salesperson-Problem,,1
+10,Agents in City,Queried agents to find base and complex items in shops,,,1
+11,Multithreading & Synchronisation,Created a multithreaded file copier and a file copier,https://github.com/alex-dav/Multithreading-Synchronisation,,1
+12,Pacman Search,Different heuristis were used so Pacman can find all the food and exit,,,1
+13,Road Registry Platform,Created a mock system for managing vehicle owners' account information,https://github.com/alex-dav/Road-Registry-Platform,,1
+14,Knapsack Maze Solving,Collected treasures in a maze while balancing weight and time to get to the exit,https://github.com/alex-dav/Knapsack-Maze-Solving,,1
+15,Machine Learning: Programming Assignment,Classified whether a patient has heart disease or not,https://github.com/alex-dav/Machine-Learning-Programming-Assignment,,1
+16,Classical AI,Suggested a medications determined by probability of having conditions,https://github.com/alex-dav/Classical-AI,,1
+17,Minecraft Maze Solving,Simulated the player solving a maze in Minecraft using an external API,https://github.com/alex-dav/Minecraft-Maze-Solving,,1
+18,LC3 Assembly with Minecraft,Used subroutines that communicate with Minecraft by retrieving data in the Minecraft world,https://github.com/alex-dav/LC3-Assembly-with-Minecraft,,1
+19,Food Loss and Waste Investigation,Created a web app showcasing some sample food loss and waste statistics,https://github.com/alex-dav/Food-Loss-and-Waste-Investigation,,1
+20,Plan4Impact,Event planning web app focusing on sustainability,https://github.com/lieuryan/Plan4Impact,1,

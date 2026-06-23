@@ -1,0 +1,19 @@
+id,education_id,course_name,course_code,completion_date
+1,1,Cloud Computing,COSC2626,2026-06
+2,1,Innovation Ecosystem and the Future of Work,OENG1235,2026-06
+3,1,Intelligent Decision Making,COSC2973,2026-06
+4,1,Machine Learning,COSC2673,2026-06
+5,1,Artificial Intelligence,COSC1127,2025-11
+6,1,Computing Theory,COSC1107,2025-11
+7,1,Essentials of Computing,COSC3045,2025-11
+8,1,Operating Systems Principles,COSC1114,2025-11
+9,1,Algorithms and Analysis,COSC2123,2025-06
+10,1,Foundations of Artificial Intelligence,COSC2960,2025-06
+11,1,Introduction to Cyber Security,INTE2625,2025-06
+12,1,Software Engineering Fundamentals,ISYS1118,2025-06
+13,1,C++ Programming Studio,COSC2804,2024-11
+14,1,Mathematics for Computing,MATH2411,2024-11
+15,1,C++ Programming Bootcamp,COSC2802,2024-09
+16,1,Java Programming Studio,COSC2803,2024-06
+17,1,Introduction to Mathematics for Computing,MATH2466,2024-06
+18,1,Java Programming Bootcamp,COSC2801,2024-04

@@ -1,0 +1,40 @@
+id,name,category
+1,Java,Programming Languages
+2,C/C++,Programming Languages
+3,Python,Programming Languages
+4,HTML,Programming Languages
+5,CSS,Programming Languages
+6,SQL,Programming Languages
+7,OCaml,Programming Languages
+8,Prolog,Programming Languages
+9,Answer Set Programming,Programming Languages
+10,LC3 Assembly,Programming Languages
+11,AWS,Cloud Computing
+12,Docker,Containerisation
+13,Windows,Operating Systems
+14,macOS,Operating Systems
+15,Ubuntu/Kali,Operating Systems
+16,Excel,Database Storage
+17,SQLiteStudio,Database Storage
+18,Git/GitHub,Version Control
+19,Agentic AI Development,Artificial Intelligence
+20,n8n Workflows,Automation
+21,Machine Learning,Data Science
+22,Data Analysis,Data Science
+23,Data Visualisation,Data Science
+24,Reinforcement Learning,Data Science
+25,Computer Vision,Data Science
+26,Teamwork,Soft Skills
+27,Problem Solving,Soft Skills
+28,Communication,Soft Skills
+29,Time Management,Soft Skills
+30,Report Writing,Soft Skills
+31,Leadership,Soft Skills
+32,Critical Thinking,Soft Skills
+33,Adaptability,Soft Skills
+34,Creativity,Soft Skills
+35,Attention to Detail,Soft Skills
+36,Collaboration,Soft Skills
+37,Presentation Skills,Soft Skills
+38,Project Management,Soft Skills
+39,Project Planning,Soft Skills
