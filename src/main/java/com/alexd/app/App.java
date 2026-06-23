@@ -17,6 +17,8 @@ public class App {
             config.staticFiles.add("public/");
             config.fileRenderer(new JavalinThymeleaf());
             config.routes.get(PageIndex.INDEX_URL, new PageIndex());
+            config.routes.get(PageContact.CONTACT_URL, new PageContact());
+            config.routes.post(PageContact.CONTACT_URL, new PageContact());
             config.routes.exception(SQLException.class, (e, context) -> {
                 System.err.println(e.getMessage());
                 context.status(500).html("<h2>Database Error</h2>");

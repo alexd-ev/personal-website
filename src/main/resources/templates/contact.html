@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-AU" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="Professional computer science portfolio contact page">
+        <meta name="theme-color" content="#0c4364">
+        <meta name="color-scheme" content="light dark">
+
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
+        <link href="https://fonts.cdnfonts.com/css/avenir" rel="stylesheet">
+        <link href="https://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
+
+        <link rel="icon" type="image/png" href="/images/letter-a-favicon.png">
+        <title>Alexander (Alex) Davidson | Contact</title>
+    </head>
+
+    <body>
+        <header>
+            <nav class="nav-container">
+                <ul class="navbar">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#about">About</a></li>
+                    <li><a href="/#experience">Experience</a></li>
+                    <li><a href="/#education">Education</a></li>
+                    <li><a href="/#projects">Projects</a></li>
+                    <li><a href="/#skills">Skills</a></li>
+                    <li><a href="/#courses">Courses</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main-container">
+            <section id="contact-form-section">
+                <h2>Get In Touch</h2>
+                <p
+                    style="text-align: center; margin-bottom: 2rem; opacity: 0.9;">
+                    I'd love to hear from you! Fill out the form below and I'll
+                    get back to you as soon as possible.
+                </p>
+
+                <form action="/contact" method="POST" class="contact-form">
+                    <div th:if="${error}" class="alert alert-error"
+                        th:text="${error}"></div>
+                    <div th:if="${success}" class="alert alert-success"
+                        th:text="${success}"></div>
+                    <div class="form-group">
+                        <label for="name">Name <span
+                                class="required-asterisk">*</span></label>
+                        <input type="text" id="name" name="name" required
+                            placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email <span
+                                class="required-asterisk">*</span></label>
+                        <input type="email" id="email" name="email" required
+                            placeholder="you@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject"
+                            placeholder="Job Opportunity / Project Inquiry">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message <span
+                                class="required-asterisk">*</span></label>
+                        <textarea id="message" name="message" rows="6" required
+                            placeholder="Hello Alex..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send
+                        Message</button>
+                </form>
+            </section>
+        </main>
+    </body>
+
+</html>
