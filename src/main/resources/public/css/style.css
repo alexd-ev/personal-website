@@ -217,7 +217,8 @@ summary:focus-visible,
     border-radius: 2px;
 }
 
-.card {
+.card,
+.education-card {
     flex: 0 0 300px;
     scroll-snap-align: start;
     background-color: var(--tab-bg);
@@ -319,21 +320,23 @@ summary:focus-visible,
     border: 1px solid var(--border-color);
     background-color: var(--bg-primary);
     border-radius: 0.4rem;
-    padding: 0.75rem 1rem;
+    padding: 0.89rem 1rem;
     margin-top: 0.5rem;
 }
 
 .modules-scroll-container::-webkit-scrollbar {
-    width: 6px;
+    width: 10px;
 }
 
 .modules-scroll-container::-webkit-scrollbar-track {
+    background-color: var(--bg-primary);
     background: transparent;
 }
 
 .modules-scroll-container::-webkit-scrollbar-thumb {
     background-color: var(--border-color);
     border-radius: 10px;
+    border: 2px solid var(--bg-primary);
 }
 
 .modules-scroll-container::-webkit-scrollbar-thumb:hover {
