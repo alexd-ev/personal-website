@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-AU" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/css/style.css">
+        <title>Error</title>
+    </head>
+
+    <body>
+        <header>
+            <nav class="nav-container">
+                <ul class="navbar">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main-container"
+            style="text-align: center; padding-top: 5rem;">
+            <h1 th:text="${status}">500</h1>
+            <h2 th:text="${title}">Application Error</h2>
+            <p th:text="${message}">An unexpected error occurred.</p>
+            <a href="/" class="submit-btn"
+                style="display: inline-block; width: auto; padding: 0.8rem 2rem;">Return
+                Home</a>
+        </main>
+    </body>
+
+</html>

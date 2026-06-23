@@ -24,8 +24,8 @@ public class Education {
         this.institution = institution;
         this.degree = degree;
         this.major = major;
-        this.startDate = DateUtils.formatYearMonth(start_date);
-        this.endDate = DateUtils.formatYearMonth(end_date);
+        this.startDate = DateTimeUtils.formatYearMonth(start_date);
+        this.endDate = DateTimeUtils.formatYearMonth(end_date);
     }
 
     public int getId() {

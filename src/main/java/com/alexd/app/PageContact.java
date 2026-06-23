@@ -2,9 +2,6 @@ package com.alexd.app;
 
 import java.util.HashMap;
 
-import java.sql.Connection;
-import java.sql.Statement;
-
 import io.javalin.http.Handler;
 import io.javalin.http.Context;
 
@@ -14,11 +11,15 @@ public class PageContact implements Handler {
 
     @Override
     public void handle(Context context) throws Exception {
-        try (Connection connection = JDBCConnection.getConnection();
-                Statement statement = JDBCConnection.getStatement(connection)) {
-
-            HashMap<String, Object> contactModel = new HashMap<>();
-            context.render(CONTACT_TEMPLATE, contactModel);
+        HashMap<String, Object> contactModel = new HashMap<>();
+        String successParam = context.queryParam("success");
+        String errorParam = context.queryParam("error");
+        if ("true".equals(successParam)) {
+            contactModel.put("success", "Your message was sent successfully! I will get back to you soon.");
         }
+        if (errorParam != null) {
+            contactModel.put("error", errorParam);
+        }
+        context.render(CONTACT_TEMPLATE, contactModel);
     }
 }

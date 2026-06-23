@@ -21,8 +21,8 @@ public class Experience {
         this.id = id;
         this.company = company;
         this.role = role;
-        this.startDate = DateUtils.formatYearMonth(start_date);
-        this.endDate = DateUtils.formatYearMonth(end_date);
+        this.startDate = DateTimeUtils.formatYearMonth(start_date);
+        this.endDate = DateTimeUtils.formatYearMonth(end_date);
         this.description = description;
     }
 

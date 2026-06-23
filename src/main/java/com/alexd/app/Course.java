@@ -21,7 +21,7 @@ public class Course {
         this.educationId = educationId;
         this.courseName = course_name;
         this.courseCode = course_code;
-        this.completionDate = DateUtils.formatYearMonth(completion_date);
+        this.completionDate = DateTimeUtils.formatYearMonth(completion_date);
     }
 
     public int getId() {

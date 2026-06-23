@@ -33,6 +33,7 @@
                 </ul>
             </nav>
         </header>
+
         <main class="main-container">
             <section id="contact-form-section">
                 <h2>Get In Touch</h2>
@@ -42,7 +43,8 @@
                     get back to you as soon as possible.
                 </p>
 
-                <form action="/contact" method="POST" class="contact-form">
+                <form action="/contact" method="POST" class="contact-form"
+                    novalidate>
                     <div th:if="${error}" class="alert alert-error"
                         th:text="${error}"></div>
                     <div th:if="${success}" class="alert alert-success"
