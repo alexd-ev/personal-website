@@ -19,8 +19,12 @@
     </head>
 
     <body>
+        <a class="skip-link" href="#main"
+            style="position:absolute;left:-9999px;top:auto;">Skip to main
+            content</a>
         <header>
-            <nav class="nav-container">
+            <nav role="navigation" aria-label="Primary Navigation"
+                class="nav-container">
                 <ul class="navbar">
                     <li><a href="/">Home</a></li>
                     <li><a href="/#about">About</a></li>
@@ -34,7 +38,7 @@
             </nav>
         </header>
 
-        <main class="main-container">
+        <main id="main" class="main-container">
             <section id="contact-form-section">
                 <h2>Get In Touch</h2>
                 <p class="welcome-form-text">
@@ -43,6 +47,13 @@
                 </p>
                 <form action="/contact" method="POST" class="contact-form"
                     novalidate>
+                    <input type="hidden" name="_csrf" th:value="${csrfToken}">
+                    <div style="position:absolute;left:-10000px;top:auto;"
+                        aria-hidden="true">
+                        <label for="website">Website</label>
+                        <input type="text" id="website" name="website"
+                            tabindex="-1" autocomplete="off">
+                    </div>
                     <div th:if="${error}" class="alert alert-error"
                         th:text="${error}"></div>
                     <div th:if="${success}" class="alert alert-success"

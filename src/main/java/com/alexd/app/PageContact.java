@@ -1,6 +1,7 @@
 package com.alexd.app;
 
 import java.util.HashMap;
+import java.util.UUID;
 
 import io.javalin.http.Handler;
 import io.javalin.http.Context;
@@ -26,6 +27,10 @@ public class PageContact implements Handler {
         if (errorParam != null) {
             contactModel.put("error", errorParam);
         }
+        // Generate a per-session CSRF token and expose it to the form
+        String csrfToken = UUID.randomUUID().toString();
+        context.sessionAttribute("csrfToken", csrfToken);
+        contactModel.put("csrfToken", csrfToken);
         context.render(CONTACT_TEMPLATE, contactModel);
     }
 }

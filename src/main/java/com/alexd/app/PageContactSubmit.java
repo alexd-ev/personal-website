@@ -19,6 +19,22 @@ public class PageContactSubmit implements Handler {
     public void handle(Context context) throws Exception {
         String messageInsert = "INSERT INTO contact_messages (name, email, subject, message, submitted_at) VALUES (?, ?, ?, ?, ?)";
 
+        // Honeypot spam field check
+        String honeypot = context.formParam("website");
+        if (honeypot != null && !honeypot.trim().isEmpty()) {
+            String spamError = URLEncoder.encode("Spam detected.", StandardCharsets.UTF_8);
+            context.redirect("/contact?error=" + spamError);
+            return;
+        }
+
+        // CSRF token validation
+        String sessionCsrf = context.sessionAttribute("csrfToken");
+        String formCsrf = context.formParam("_csrf");
+        if (sessionCsrf == null || formCsrf == null || !sessionCsrf.equals(formCsrf)) {
+            String invalidError = URLEncoder.encode("Invalid form submission.", StandardCharsets.UTF_8);
+            context.redirect("/contact?error=" + invalidError);
+            return;
+        }
         try (Connection connection = JDBCConnection.getConnection();
                 PreparedStatement preparedStatement = JDBCConnection.getPreparedStatement(connection, messageInsert)) {
 
@@ -52,6 +68,8 @@ public class PageContactSubmit implements Handler {
 
             preparedStatement.setString(5, DateTimeUtils.formatLocalDateTime("Australia/Melbourne"));
             preparedStatement.executeUpdate();
+            // Invalidate the CSRF token after successful use
+            context.sessionAttribute("csrfToken", null);
             context.redirect("/contact?success=true");
         }
     }

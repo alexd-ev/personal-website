@@ -8,8 +8,9 @@
     </head>
 
     <body>
+        <a class="skip-link" href="#main" style="position:absolute;left:-9999px;top:auto;">Skip to main content</a>
         <header>
-            <nav class="nav-container">
+            <nav role="navigation" aria-label="Primary Navigation" class="nav-container">
                 <ul class="navbar">
                     <li><a href="/">Home</a></li>
                     <li><a href="/contact">Contact</a></li>
@@ -17,7 +18,7 @@
             </nav>
         </header>
 
-        <main class="main-container"
+        <main id="main" class="main-container"
             style="text-align: center; padding-top: 5rem;">
             <h1 th:text="${status}">500</h1>
             <h2 th:text="${title}">Application Error</h2>

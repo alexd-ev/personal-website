@@ -8,7 +8,6 @@
             content="Professional computer science portfolio showcasing my various projects, and experiences.">
         <meta name="theme-color" content="#0c4364">
         <meta name="color-scheme" content="light dark">
-
         <link rel="stylesheet" href="/css/style.css">
         <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
         <link href="https://fonts.cdnfonts.com/css/avenir" rel="stylesheet">
@@ -19,8 +18,12 @@
     </head>
 
     <body>
+        <a class="skip-link" href="#main"
+            style="position:absolute;left:-9999px;top:auto;">Skip to main
+            content</a>
         <header>
-            <nav class="nav-container">
+            <nav role="navigation" aria-label="Primary Navigation"
+                class="nav-container">
                 <ul class="navbar">
                     <li><a href="/">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -34,7 +37,7 @@
             </nav>
         </header>
 
-        <main class="main-container">
+        <main id="main" class="main-container">
             <section id="home">
                 <h1>Welcome to My Portfolio Website!</h1>
                 <div class="hello-box">
@@ -47,7 +50,8 @@
                 <h2>About Me</h2>
                 <div class="about-content">
                     <img src="/images/profile.jpg" alt="Alex Davidson Picture"
-                        class="profile-pic">
+                        class="profile-pic" loading="lazy" width="200"
+                        height="200">
                     <p>I am a third year undergraduate student studying Bachelor
                         of
                         Computer Science (Professional) at RMIT University. I
@@ -70,7 +74,7 @@
                         <div class="logo-wrapper">
                             <img th:src="'/images/' + ${#strings.toLowerCase(#strings.replace(experience.company, ' ', '-'))} + '.png'"
                                 th:alt="${experience.company} + ' Logo'"
-                                class="logo">
+                                loading="lazy" class="logo">
                         </div>
                         <div class="card-header">
                             <div class="title-wrapper">
@@ -96,7 +100,7 @@
                         <div class="logo-wrapper">
                             <img th:src="'/images/' + ${#strings.toLowerCase(#strings.replace(education.institution, ' ', '-'))} + '.png'"
                                 th:alt="${education.institution} + ' Logo'"
-                                class="logo">
+                                loading="lazy" class="logo">
                         </div>
                         <div class="card-header">
                             <div class="title-wrapper">
