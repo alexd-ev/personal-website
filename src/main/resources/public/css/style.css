@@ -33,6 +33,23 @@
     padding: 0;
 }
 
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    background-color: var(--tab-hover-bg);
+    color: var(--tab-hover-text);
+    padding: 0.75rem 1rem;
+    border-radius: 0.4rem;
+    z-index: 1001;
+    transition: left 0.15s ease;
+}
+
+.skip-link:focus-visible {
+    left: 1rem;
+    top: 1rem;
+}
+
 html {
     font-family: var(--font-family);
     color: var(--text-primary);
@@ -212,6 +229,7 @@ section h2 {
 }
 
 a:focus-visible,
+button:focus-visible,
 summary:focus-visible,
 .card-deck::-webkit-scrollbar-thumb:focus-visible {
     outline: 2px dashed var(--tab-hover-bg);
@@ -248,7 +266,7 @@ summary:focus-visible,
     gap: 0.5rem;
 }
 
-/* Mobile override for Decks */
+/* Mobile override */
 @media (max-width: 768px) {
     .card-deck {
         justify-content: flex-start;
