@@ -1,0 +1,26 @@
+{
+    "name": "Java Web",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            "VARIANT": "3-25-trixie",
+            "INSTALL_MAVEN": "true",
+            "MAVEN_VERSION": "3.9.16"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-java-pack",
+                "mhutchie.git-graph",
+                "ms-vsliveshare.vsliveshare",
+                "ritwickdey.liveserver"
+            ]
+        }
+    },
+    "forwardPorts": [
+        7001
+    ],
+    "postCreateCommand": "java -version",
+    "remoteUser": "vscode"
+}
