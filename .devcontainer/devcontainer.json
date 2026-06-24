@@ -1,3 +1,4 @@
+// Dev Container configuration for Java Web development, based on Microsoft's devcontainer template.
 {
     "name": "Java Web",
     "build": {

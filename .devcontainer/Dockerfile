@@ -1,3 +1,5 @@
+# Dev Container Dockerfile
+# Based on Microsoft's Java Dev Container image and configured to install Maven.
 ARG VARIANT="3-25-trixie"
 FROM mcr.microsoft.com/devcontainers/java:${VARIANT}
 
