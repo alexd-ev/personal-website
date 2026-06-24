@@ -7,6 +7,11 @@ import java.sql.Statement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 
+/*
+ * Represents a project entry on the personal website.
+ *
+ * Loads project information from the database along with associated skill names.
+ */
 public class Project {
     private int id;
     private String title;
@@ -56,6 +61,13 @@ public class Project {
         return skillNames;
     }
 
+    /**
+     * Loads all projects and their related skills from the database.
+     *
+     * @param statement SQL statement to execute
+     * @return list of project entries with skill names attached
+     * @throws SQLException if the query fails
+     */
     public static ArrayList<Project> loadAllProjects(Statement statement) throws SQLException {
         LinkedHashMap<Integer, Project> projectMap = new LinkedHashMap<>();
         String projectsQuery = """

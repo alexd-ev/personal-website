@@ -9,6 +9,12 @@ import java.sql.PreparedStatement;
 import io.javalin.http.Handler;
 import io.javalin.http.Context;
 
+/*
+ * Handler for contact form submissions.
+ *
+ * Validates form input, inserts a new contact message into the database,
+ * and redirects back to the contact page with a success or error message.
+ */
 public class PageContactSubmit implements Handler {
     public void handle(Context context) throws Exception {
         String messageInsert = "INSERT INTO contact_messages (name, email, subject, message, submitted_at) VALUES (?, ?, ?, ?, ?)";

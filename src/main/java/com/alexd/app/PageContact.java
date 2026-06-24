@@ -5,6 +5,12 @@ import java.util.HashMap;
 import io.javalin.http.Handler;
 import io.javalin.http.Context;
 
+/*
+ * Handler for the contact page.
+ *
+ * Renders the contact form and optionally displays success or error feedback
+ * based on query parameters returned after form submission.
+ */
 public class PageContact implements Handler {
     public static final String CONTACT_URL = "/contact";
     private static final String CONTACT_TEMPLATE = "templates/contact.html";

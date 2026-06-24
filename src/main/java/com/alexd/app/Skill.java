@@ -7,6 +7,9 @@ import java.sql.Statement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 
+/*
+ * Represents a skill entry used to group and display skills on the website.
+ */
 public class Skill {
     private int id;
     private String name;
@@ -33,6 +36,13 @@ public class Skill {
         return category;
     }
 
+    /**
+     * Loads all skills from the database grouped by category.
+     *
+     * @param statement SQL statement to execute
+     * @return ordered map of skill categories to skill lists
+     * @throws SQLException if the query fails
+     */
     public static LinkedHashMap<String, ArrayList<Skill>> loadAllSkillsByCategory(Statement statement)
             throws SQLException {
         LinkedHashMap<String, ArrayList<Skill>> groupedSkills = new LinkedHashMap<>();

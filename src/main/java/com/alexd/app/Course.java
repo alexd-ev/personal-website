@@ -6,6 +6,9 @@ import java.sql.Statement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 
+/*
+ * Represents an academic or training course linked to an education entry.
+ */
 public class Course {
     private int id;
     private int educationId;
@@ -44,6 +47,13 @@ public class Course {
         return completionDate;
     }
 
+    /**
+     * Loads all courses from the database.
+     *
+     * @param statement SQL statement to execute
+     * @return ordered list of courses
+     * @throws SQLException if the query fails
+     */
     public static ArrayList<Course> loadAllCourses(Statement statement) throws SQLException {
         ArrayList<Course> courses = new ArrayList<>();
         String coursesQuery = """

@@ -7,6 +7,11 @@ import java.sql.Statement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 
+/*
+ * Represents an education entry on the personal website.
+ *
+ * Includes institution, degree, major, dates, and associated course names.
+ */
 public class Education {
     private int id;
     private String institution;
@@ -56,6 +61,13 @@ public class Education {
         return courseNames;
     }
 
+    /**
+     * Loads education entries and their course names from the database.
+     *
+     * @param statement SQL statement to execute
+     * @return ordered list of education entries with courses attached
+     * @throws SQLException if the query fails
+     */
     public static ArrayList<Education> loadAllEducations(Statement statement) throws SQLException {
         LinkedHashMap<Integer, Education> educationMap = new LinkedHashMap<>();
         String educationsQuery = """

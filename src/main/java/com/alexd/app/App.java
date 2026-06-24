@@ -6,9 +6,21 @@ import io.javalin.Javalin;
 import io.javalin.plugin.bundled.RouteOverviewPlugin;
 import io.javalin.rendering.template.JavalinThymeleaf;
 
+/*
+ * Main application class for the personal website.
+ *
+ * This class configures and starts the Javalin web server, registers static
+ * files, Thymeleaf rendering, page routes, and global exception handlers.
+ */
 public class App {
     public static final int JAVALIN_PORT = 7001;
 
+    /*
+     * Bootstrap method for the Javalin web application.
+     *
+     * The method configures the embedded server, route mappings, and error
+     * handling.
+     */
     void main() {
         Javalin.create(config -> {
             config.registerPlugin(new RouteOverviewPlugin(pluginConfig -> {

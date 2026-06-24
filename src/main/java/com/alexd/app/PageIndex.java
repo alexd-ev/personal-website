@@ -10,6 +10,12 @@ import java.sql.Statement;
 import io.javalin.http.Handler;
 import io.javalin.http.Context;
 
+/*
+ * Handler for the website's main index page.
+ *
+ * Queries the database for experience, education, projects, skills, and course data,
+ * then renders the index template with the aggregated model.
+ */
 public class PageIndex implements Handler {
     public static final String INDEX_URL = "/";
     private static final String INDEX_TEMPLATE = "templates/index.html";

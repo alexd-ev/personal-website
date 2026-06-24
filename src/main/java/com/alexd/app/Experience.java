@@ -6,6 +6,9 @@ import java.sql.Statement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 
+/*
+ * Represents a work experience entry on the personal website.
+ */
 public class Experience {
     private int id;
     private String company;
@@ -50,6 +53,13 @@ public class Experience {
         return description;
     }
 
+    /**
+     * Loads all experience entries from the database.
+     *
+     * @param statement SQL statement to execute
+     * @return list of experiences sorted by start date descending
+     * @throws SQLException if the query fails
+     */
     public static ArrayList<Experience> loadAllExperiences(Statement statement) throws SQLException {
         ArrayList<Experience> experiences = new ArrayList<>();
         String experiencesQuery = """
