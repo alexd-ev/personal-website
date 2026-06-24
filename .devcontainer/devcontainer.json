@@ -19,9 +19,7 @@
             ]
         }
     },
-    "forwardPorts": [
-        7001
-    ],
+    "appPort": 7001,
     "postCreateCommand": "java -version",
     "remoteUser": "vscode"
 }
