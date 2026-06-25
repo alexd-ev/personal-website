@@ -1,14 +1,19 @@
 # Personal Portfolio Website
 ## Overview
-My personal portfolio website project. Uses my portfolio database, which contains data about me. It runs a series of queries to do lookups to render the data on the website. Initially manually ran SQL scripts to create tables and insert values, but this can be modified to use Java to read CSV files and create tables and insert values in the database.
+My personal portfolio website project uses my portfolio local database, which contains data about me. Specifically, the website showcases my past experience, education, projects, skills, and courses. Local hosting on javalin web server with thymeleaf frontend, with future plans to host on AWS.
 
+It runs a series of queries to do lookups to render the data on the website. Initially manually ran SQL scripts in a DBMS to create tables and insert values, but this can be modified to use Java to read CSV files and create tables and insert values in the database. The database is non volatile, so contact form submissions are persistent.
+
+### Homepage
 ![Homepage Screenshot](src/main/resources/public/images/homepage.png)
+
+### Contact Page
 ![Contact page Screenshot](src/main/resources/public/images/contact-page.png)
 
 ## Technical Specification
 To build and run the code locally, JDK 25+ is required. If an earlier version must be used, replace the `void main()` signature with `public static void main(String[] args)` in `App.java:24`. If using most IDE maven plugins, the libraries are automatically downloaded and can run from IDE. Otherwise, maven is required to download the libraries and build the application.
 
-To build and run the code remotely, docker engine is required. If using most IDE dev container plugins, can open a remote dev container and run from IDE. Otherwise, the dev container CLI is required. If only docker must be used, WIP.
+To build and run the code remotely, docker engine is required. If using most IDE dev container plugins, can open the remote dev container and run from IDE. Otherwise, the dev container CLI is required. If only docker must be used, WIP.
 
 ## Classes backing Web Pages
 ```
@@ -30,7 +35,7 @@ Project.java                                - Project information loader
 Skill.java                                  - Skill information loader
 ```
 
-## Folders
+## Project Structure
 ```
 personal-website/
 ├── .devcontainer/
@@ -62,11 +67,11 @@ personal-website/
 ```
 
 ## Libraries
-* org.xerial.sqlite-jdbc (SQLite Java Database Connectivity)
-* io.javalin.
+* org.xerial:sqlite-jdbc (SQLite Java Database Connectivity)
+* io.javalin:
     * javalin (Java web server)
     * javalin-rendering-thymeleaf (HTML template)
-* org.slf4.slf4j-simple (Logging)
+* org.slf4:slf4j-simple (Logging)
 
 # Building & Running the Code
 ## Locally
