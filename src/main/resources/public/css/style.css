@@ -164,7 +164,6 @@ section h2 {
     float: right;
     width: 200px;
     height: 200px;
-    object-fit: cover;
     border-radius: 0.6rem;
     border: 1px solid var(--border-color);
     margin-left: 2rem;
