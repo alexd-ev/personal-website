@@ -11,11 +11,11 @@ It runs a series of queries to do lookups to render the data on the website. Ini
 ![Contact page Screenshot](src/main/resources/public/images/contact-page.png)
 
 ## Technical Specification
-To open the website, JRE 25+ is preferred. If a version earlier than JRE 21 must be used, then build and run the code as below, though this requires the full JDK. Download the released `alexds-personal-website-1.0.0.zip` archive found here: https://github.com/alexd-ev/personal-website/releases/latest. Extract the files then run this command in a terminal depending on JRE version:
-1. JRE 25+: `java --enable-native-access=ALL-UNNAMED -jar alexds-personal-website-1.0.0.jar` or JRE 21-24: `java --enable-native-access=ALL-UNNAMED --enable-preview -jar alexds-personal-website-1.0.0.jar`
+To open the website, JRE 25+ is required. If an earlier version must be used, then build and run the code as below, though this requires the full JDK. Download the released `alexds-personal-website-1.0.0.zip` archive found here: https://github.com/alexd-ev/personal-website/releases/latest. Extract the files then run this command in a terminal:
+1. `java --enable-native-access=ALL-UNNAMED -jar alexds-personal-website-1.0.0.jar`
 2. Go to: http://localhost:7001/
 
-To build and run the code locally, JDK 25+ is required. If an earlier version must be used, replace the `void main()` signature with `public static void main(String[] args)` in `App.java:24`. If using most IDE maven plugins, the libraries are automatically downloaded and can run from IDE. Otherwise, maven is required to download the libraries and build the application (see [Building & Running the code Locally](#locally)).
+To build and run the code locally, JDK 25+ is required. If an earlier version must be used, replace the `void main()` signature with `public static void main(String[] args)` in `App.java:24`. And change the maven compiler release tag value to the version in `pom.xml:15`. If using most IDE maven plugins, the libraries are automatically downloaded and can run from IDE. Otherwise, maven is required to download the libraries and build the application (see [Building & Running the code Locally](#locally)).
 
 To build and run the code remotely, docker engine is required. If using most IDE dev container plugins, can open the remote dev container and run from IDE. Otherwise, the dev container CLI is required. (see [Building & Running the code Remotely](#remotely-using-a-dev-container)) If only docker must be used, WIP.
 
