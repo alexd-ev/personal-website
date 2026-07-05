@@ -87,13 +87,21 @@ header {
 .navbar {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 0.25rem;
     list-style: none;
 }
 
 .navbar li {
     display: block;
+}
+
+.navbar li:first-child {
+    margin-left: auto;
+}
+
+.navbar li:last-child {
+    margin-right: auto;
 }
 
 .navbar a {
@@ -113,6 +121,23 @@ header {
     background-color: var(--tab-hover-bg);
     color: var(--tab-hover-text);
     border-color: var(--tab-hover-bg);
+}
+
+/* Mobile override */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 2px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .navbar::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 ::-webkit-scrollbar {
