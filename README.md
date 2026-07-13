@@ -11,15 +11,15 @@ It runs a series of queries to do lookups to render the data on the website. Ini
 ![Contact page Screenshot](src/main/resources/public/images/contact-page.png)
 
 ## Technical Specification
-To open the website, JRE 25+ is required. If an earlier version must be used, then build and run the code as below, though this requires the full JDK. Download the released `alexds-personal-website-1.0.0.zip` archive found here: https://github.com/alexd-ev/personal-website/releases/latest. Extract the files then run the application using Java by running this command in a terminal:
+To open the website, [JRE 25+](https://jdk.java.net/java-se-ri/25) is required. If an earlier version must be used, then build and run the code as below, though this requires the full JDK. Download the released `alexds-personal-website-1.0.0.zip` archive found here: https://github.com/alexd-ev/personal-website/releases/latest. Extract the files then run the application using Java by running this command in a terminal:
 ```bash
 java --enable-native-access=ALL-UNNAMED -jar alexds-personal-website-1.0.0.jar
 ```
 Go to: http://localhost:7001/
 
-To build and run the code locally, JDK 25+ is required. If an earlier version must be used, replace the `void main()` signature with `public static void main(String[] args)` in `App.java:24`. And change the `<maven.compiler.release>` value to the installed version in `pom.xml:15`. If using most IDE maven plugins, the libraries are automatically downloaded and can run from IDE. Otherwise, maven is required to download the libraries and build the application (see [Building & Running the code Locally](#locally)).
+To build and run the code locally, [JDK 25+](https://jdk.java.net/java-se-ri/25) is required. If an earlier version must be used, replace the `void main()` signature with `public static void main(String[] args)` in `App.java:24`. And change the `<maven.compiler.release>` value to the installed version in `pom.xml:15`. If using most IDE maven plugins, the libraries are automatically downloaded and can run from IDE. Otherwise, [maven](https://maven.apache.org/install.html) is required to download the libraries and build the application (see [Building & Running the code Locally](#locally)).
 
-To build and run the code remotely, docker engine is required. If using most IDE dev container plugins, can open the remote dev container and run from IDE. Otherwise, the dev container CLI is required. (see [Building & Running the code Remotely](#remotely-using-a-dev-container)).
+To build and run the code remotely, [docker engine](https://docs.docker.com/engine/install/) is required. If using most IDE dev container plugins, can open the remote dev container and run from IDE. Otherwise, the [dev container CLI](https://github.com/devcontainers/cli) is required. (see [Building & Running the code Remotely](#remotely-using-a-dev-container)).
 
 ## Classes backing Web Pages
 ```
@@ -97,6 +97,12 @@ Then build and run the application inside the container:
 devcontainer exec --workspace-folder . mvn exec:java
 ```
 Go to: http://localhost:7001/
+
+# Packaging the Code
+```bash
+mvn package
+java --enable-native-access=ALL-UNNAMED -jar target/personal-website-1.0.0.jar
+```
 
 # Author
 `alexd-ev` (Alex Davidson)
