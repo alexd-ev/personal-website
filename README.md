@@ -1,6 +1,6 @@
 # Personal Portfolio Website
 ## Overview
-My personal portfolio website project uses my portfolio local database, which contains data about me. Specifically, the website showcases my past experience, education, projects, skills, and courses. Utilises local hosting on javalin web server with thymeleaf frontend (see https://github.com/alexd-ev/personal-website-aws for AWS hosting).
+My personal portfolio website project uses my portfolio local database, which contains data about me. Specifically, the website showcases my past experience, education, projects, skills, and courses. Utilises local hosting on a Javalin web server with Thymeleaf frontend (see https://github.com/alexd-ev/personal-website-aws for AWS hosting).
 
 It runs a series of queries to do lookups to render the data on the website. Initially manually ran SQL scripts in a DBMS to create tables and insert values, but this can be modified to use Java to read CSV files and create tables and insert values in the database. The database is non volatile, so new contact form submissions are persistent and can be viewed in a DBMS.
 
@@ -17,9 +17,9 @@ java --enable-native-access=ALL-UNNAMED -jar alexds-personal-website-1.0.0.jar
 ```
 Go to: http://localhost:7001/
 
-To build and run the code locally, [JDK 25+](https://jdk.java.net/java-se-ri/25) is required. If an earlier version must be used, replace the `void main()` signature with `public static void main(String[] args)` in `App.java:24`. And change the `<maven.compiler.release>` value to the installed version in `pom.xml:15`. If using most IDE maven plugins, the libraries are automatically downloaded and can run from IDE. Otherwise, [maven](https://maven.apache.org/install.html) is required to download the libraries and build the application (see [Building & Running the code Locally](#locally)).
+To build and run the code locally, [JDK 25+](https://jdk.java.net/java-se-ri/25) is required. If an earlier version must be used, replace the `void main()` signature with `public static void main(String[] args)` in `src/main/java/com/alexd/app/App.java:24`. And change the `<maven.compiler.release>` value to the installed version in `pom.xml:15`. If using most IDE Maven plugins, the libraries should automatically downloaded. Then can build and run from IDE. Otherwise, [Maven](https://maven.apache.org/install.html) is required to download the libraries, build and run the application (see [Building and Running the code Locally](#locally)).
 
-To build and run the code remotely, [docker engine](https://docs.docker.com/engine/install/) is required. If using most IDE dev container plugins, can open the remote dev container and run from IDE. Otherwise, the [dev container CLI](https://github.com/devcontainers/cli) is required. (see [Building & Running the code Remotely](#remotely-using-a-dev-container)).
+To build and run the code remotely, [Docker Engine](https://docs.docker.com/engine/install/) is required. If using most IDE dev container plugins, can open the remote Dev Container and run from IDE. Otherwise, the [Dev Container CLI](https://github.com/devcontainers/cli) is required. (see [Building and Running the code Remotely](#remotely-using-a-dev-container)).
 
 ## Classes backing Web Pages
 ```
@@ -30,7 +30,7 @@ PageContactSubmit.java                      - Form handler
 
 ## Other Classes
 ```
-App.java                                    - Main Application entrypoint
+App.java                                    - Main application entrypoint
 Course.java                                 - Course information loader
 DateTimeUtils.java                          - Date and time formatter
 Education.java                              - Education information loader
@@ -73,13 +73,13 @@ personal-website/
 ```
 
 ## Libraries
-* org.xerial:sqlite-jdbc (SQLite Java Database Connectivity)
-* io.javalin:
-    * javalin (Java web server)
-    * javalin-rendering-thymeleaf (HTML template)
-* org.slf4:slf4j-simple (Logging)
+* `org.xerial:sqlite-jdbc` (SQLite Java Database Connectivity)
+* `io.javalin:`
+    * `javalin` (Java web server)
+    * `javalin-rendering-thymeleaf` (HTML template)
+* `org.slf4:slf4j-simple` (Logging)
 
-# Building & Running the Code
+# Building and Running the Code
 ## Locally
 Read the `pom.xml` file, download the Java libraries, build, and run the application:
 ```bash
