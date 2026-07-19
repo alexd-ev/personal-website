@@ -7,8 +7,8 @@ CREATE TABLE IF NOT EXISTS experience (
     end_date    TEXT,
     description TEXT    NOT NULL
 );
-
 -- Education Table
+
 CREATE TABLE IF NOT EXISTS education (
     id          INTEGER PRIMARY KEY AUTOINCREMENT,
     institution TEXT    NOT NULL,
@@ -17,8 +17,8 @@ CREATE TABLE IF NOT EXISTS education (
     start_date  TEXT    NOT NULL,
     end_date    TEXT
 );
-
 -- Projects Table
+
 CREATE TABLE IF NOT EXISTS projects (
     id            INTEGER PRIMARY KEY AUTOINCREMENT,
     title         TEXT    NOT NULL,
@@ -35,16 +35,16 @@ CREATE TABLE IF NOT EXISTS projects (
     )
     REFERENCES education (id) ON DELETE SET NULL
 );
-
 -- Skills Table
+
 CREATE TABLE IF NOT EXISTS skills (
     id       INTEGER PRIMARY KEY AUTOINCREMENT,
     name     TEXT    NOT NULL
                      UNIQUE,
     category TEXT    NOT NULL
 );
-
 -- Project-Skills Junction Table
+
 CREATE TABLE IF NOT EXISTS project_skills (
     project_id INTEGER,
     skill_id   INTEGER,
@@ -61,8 +61,8 @@ CREATE TABLE IF NOT EXISTS project_skills (
     )
     REFERENCES skills (id) ON DELETE CASCADE
 );
-
 -- Courses Table
+
 CREATE TABLE IF NOT EXISTS courses (
     id              INTEGER PRIMARY KEY AUTOINCREMENT,
     education_id    INTEGER,
@@ -74,8 +74,8 @@ CREATE TABLE IF NOT EXISTS courses (
     )
     REFERENCES education (id) ON DELETE CASCADE
 );
-
 -- Contact Messages Table
+
 CREATE TABLE IF NOT EXISTS contact_messages (
     id           INTEGER  PRIMARY KEY AUTOINCREMENT,
     name         TEXT     NOT NULL,

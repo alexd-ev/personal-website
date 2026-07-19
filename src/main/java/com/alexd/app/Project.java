@@ -89,7 +89,7 @@ public class Project {
                        project_skills ps ON p.id = ps.project_id
                        LEFT JOIN
                        skills s ON ps.skill_id = s.id
-                 ORDER BY p.id;
+                 ORDER BY p.id DESC;
                 """;
         try (ResultSet projectSkillsResults = statement.executeQuery(projectsQuery)) {
             while (projectSkillsResults.next()) {

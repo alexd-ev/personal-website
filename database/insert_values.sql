@@ -34,8 +34,8 @@ INSERT INTO experience (
                            '2021-12',
                            'Assisted in taking and serving orders and cleaned trays'
                        );
-
 -- Education Entries
+
 INSERT INTO education (
                           institution,
                           degree,
@@ -45,7 +45,7 @@ INSERT INTO education (
                       )
                       VALUES (
                           'RMIT University',
-                          'Bachelor of Computer Science (Professional)',
+                          'Bachelor of Computer Science',
                           'Advanced Computer Science',
                           '2024-03',
                           NULL
@@ -64,8 +64,8 @@ INSERT INTO education (
                           '2018-02',
                           '2019-11'
                       );
-
 -- Project Entries
+
 INSERT INTO projects (
                          title,
                          description,
@@ -73,63 +73,45 @@ INSERT INTO projects (
                          education_id
                      )
                      VALUES (
-                         'Image Classification',
-                         'Classified colon cell images as cancerous or not, as well as the cell type',
-                         'https://github.com/alex-dav/Image-Classification',
+                         'Food Loss and Waste Investigation',
+                         'Created a web app showcasing some sample food loss and waste statistics',
+                         'https://github.com/alex-dav/Food-Loss-and-Waste-Investigation',
                          1
                      ),
                      (
-                         'AWS Cloud System Development',
-                         'Song subscription web app implemented on three backends',
-                         'https://github.com/alex-dav/AWS-Cloud-System-Development',
+                         'LC3 Assembly with Minecraft',
+                         'Used subroutines that communicate with Minecraft by retrieving data in the Minecraft world',
+                         'https://github.com/alex-dav/LC3-Assembly-with-Minecraft',
                          1
                      ),
                      (
-                         'Exam Timetabling System',
-                         'Scheduled exams to timeslots and rooms',
-                         null,
+                         'Minecraft Maze Solving',
+                         'Simulated the player solving a maze in Minecraft using an external API',
+                         'https://github.com/alex-dav/Minecraft-Maze-Solving',
                          1
                      ),
                      (
-                         'Machine Learning Classification and Model Comparison',
-                         'Classified fire intensity level of wildfire events',
-                         'https://github.com/alex-dav/Machine-Learning-Classification-and-Model-Comparison',
+                         'Classical AI',
+                         'Suggested a medications determined by probability of having conditions',
+                         'https://github.com/alex-dav/Classical-AI',
                          1
                      ),
                      (
-                         'Flight Routing System',
-                         'Found cheapest/fastest flights between two cities',
-                         null,
+                         'Machine Learning: Programming Assignment',
+                         'Classified whether a patient has heart disease or not',
+                         'https://github.com/alex-dav/Machine-Learning-Programming-Assignment',
                          1
                      ),
                      (
-                         'Machine Learning Pipeline',
-                         'Predicted nightly prices of Airbnbs based on various features',
-                         'https://github.com/alex-dav/Machine-Learning-Pipeline',
+                         'Knapsack Maze Solving',
+                         'Collected treasures in a maze while balancing weight and time to get to the exit',
+                         'https://github.com/alex-dav/Knapsack-Maze-Solving',
                          1
                      ),
                      (
-                         'Memory Allocation',
-                         'Simulated malloc and free functions using a custom memory allocator with two approaches',
-                         'https://github.com/alex-dav/Memory-Allocation',
-                         1
-                     ),
-                     (
-                         'Reinforcement Learning',
-                         'Trained a Pacman agent to avoid ghosts and get to the exit',
-                         null,
-                         1
-                     ),
-                     (
-                         'Travelling Salesperson Problem',
-                         'Implemented three algorithms for solving the problem',
-                         'https://github.com/alex-dav/Travelling-Salesperson-Problem',
-                         1
-                     ),
-                     (
-                         'Agents in City',
-                         'Queried agents to find base and complex items in shops',
-                         null,
+                         'Road Registry Platform',
+                         'Created a mock system for managing vehicle owners'' account information',
+                         'https://github.com/alex-dav/Road-Registry-Platform',
                          1
                      ),
                      (
@@ -141,49 +123,31 @@ INSERT INTO projects (
                      (
                          'Pacman Search',
                          'Different heuristis were used so Pacman can find all the food and exit',
-                         null,
+                         NULL,
                          1
                      ),
                      (
-                         'Road Registry Platform',
-                         'Created a mock system for managing vehicle owners'' account information',
-                         'https://github.com/alex-dav/Road-Registry-Platform',
+                         'Agents in City',
+                         'Queried agents to find base and complex items in shops',
+                         NULL,
                          1
                      ),
                      (
-                         'Knapsack Maze Solving',
-                         'Collected treasures in a maze while balancing weight and time to get to the exit',
-                         'https://github.com/alex-dav/Knapsack-Maze-Solving',
+                         'Travelling Salesperson Problem',
+                         'Implemented three algorithms for solving the problem',
+                         'https://github.com/alex-dav/Travelling-Salesperson-Problem',
                          1
                      ),
                      (
-                         'Machine Learning: Programming Assignment',
-                         'Classified whether a patient has heart disease or not',
-                         'https://github.com/alex-dav/Machine-Learning-Programming-Assignment',
+                         'Reinforcement Learning',
+                         'Trained a Pacman agent to avoid ghosts and get to the exit',
+                         NULL,
                          1
                      ),
                      (
-                         'Classical AI',
-                         'Suggested a medications determined by probability of having conditions',
-                         'https://github.com/alex-dav/Classical-AI',
-                         1
-                     ),
-                     (
-                         'Minecraft Maze Solving',
-                         'Simulated the player solving a maze in Minecraft using an external API',
-                         'https://github.com/alex-dav/Minecraft-Maze-Solving',
-                         1
-                     ),
-                     (
-                         'LC3 Assembly with Minecraft',
-                         'Used subroutines that communicate with Minecraft by retrieving data in the Minecraft world',
-                         'https://github.com/alex-dav/LC3-Assembly-with-Minecraft',
-                         1
-                     ),
-                     (
-                         'Food Loss and Waste Investigation',
-                         'Created a web app showcasing some sample food loss and waste statistics',
-                         'https://github.com/alex-dav/Food-Loss-and-Waste-Investigation',
+                         'Memory Allocation',
+                         'Simulated malloc and free functions using a custom memory allocator with two approaches',
+                         'https://github.com/alex-dav/Memory-Allocation',
                          1
                      );
 
@@ -200,7 +164,66 @@ INSERT INTO projects (
                          1
                      );
 
+INSERT INTO projects (
+                         title,
+                         description,
+                         github_url,
+                         education_id
+                     )
+                     VALUES (
+                         'Machine Learning Pipeline',
+                         'Predicted nightly prices of Airbnbs based on various features',
+                         'https://github.com/alex-dav/Machine-Learning-Pipeline',
+                         1
+                     ),
+                     (
+                         'Flight Routing System',
+                         'Found cheapest/fastest flights between two cities',
+                         NULL,
+                         1
+                     ),
+                     (
+                         'Machine Learning Classification and Model Comparison',
+                         'Classified fire intensity level of wildfire events',
+                         'https://github.com/alex-dav/Machine-Learning-Classification-and-Model-Comparison',
+                         1
+                     ),
+                     (
+                         'Exam Timetabling System',
+                         'Scheduled exams to timeslots and rooms',
+                         NULL,
+                         1
+                     ),
+                     (
+                         'AWS Cloud System Development',
+                         'Song subscription web app implemented on three backends',
+                         'https://github.com/alex-dav/AWS-Cloud-System-Development',
+                         1
+                     ),
+                     (
+                         'Image Classification',
+                         'Classified colon cell images as cancerous or not, as well as the cell type',
+                         'https://github.com/alex-dav/Image-Classification',
+                         1
+                     );
+
+INSERT INTO projects (
+                         title,
+                         description,
+                         github_url
+                     )
+                     VALUES (
+                         'Personal Website',
+                         'This personal portfolio website project',
+                         'https://github.com/alexd-ev/personal-website'
+                     ),
+                     (
+                         'Skyblock Generator',
+                         'My Minecraft classic skyblock island generator project',
+                         'https://github.com/alexd-ev/skyblock-generator'
+                     );
 -- Skills Entries
+
 INSERT INTO skills (
                        name,
                        category
@@ -361,771 +384,807 @@ INSERT INTO skills (
                        'Project Planning',
                        'Soft Skills'
                    );
-
 -- Project-Skills Junction Entries
+
 INSERT INTO project_skills (
                                project_id,
                                skill_id
                            )
                            VALUES (
                                1,
-                               3
-                           ),
-                           (
-                               1,
-                               13
-                           ),
-                           (
-                               1,
-                               16
-                           ),
-                           (
-                               1,
-                               21
-                           ),
-                           (
-                               1,
-                               22
-                           ),
-                           (
-                               1,
-                               23
-                           ),
-                           (
-                               1,
-                               25
-                           ),
-                           (
-                               1,
-                               27
-                           ),
-                           (
-                               1,
-                               29
-                           ),
-                           (
-                               1,
-                               30
-                           ),
-                           (
-                               1,
-                               32
-                           ),
-                           (
-                               1,
-                               34
-                           ),
-                           (
-                               2,
                                1
                            ),
                            (
-                               2,
-                               3
-                           ),
-                           (
-                               2,
-                               4
-                           ),
-                           (
-                               2,
-                               5
-                           ),
-                           (
-                               2,
-                               11
-                           ),
-                           (
-                               2,
-                               12
-                           ),
-                           (
-                               2,
+                               1,
                                13
                            ),
                            (
-                               2,
-                               15
-                           ),
-                           (
-                               2,
-                               18
-                           ),
-                           (
-                               2,
-                               22
-                           ),
-                           (
-                               2,
-                               26
-                           ),
-                           (
-                               2,
-                               27
-                           ),
-                           (
-                               2,
-                               28
-                           ),
-                           (
-                               2,
-                               29
-                           ),
-                           (
-                               2,
-                               30
-                           ),
-                           (
-                               2,
-                               31
-                           ),
-                           (
-                               2,
-                               32
-                           ),
-                           (
-                               2,
-                               36
-                           ),
-                           (
-                               2,
-                               37
-                           ),
-                           (
-                               2,
-                               38
-                           ),
-                           (
-                               2,
-                               39
-                           ),
-                           (
-                               3,
-                               3
-                           ),
-                           (
-                               3,
-                               8
-                           ),
-                           (
-                               3,
-                               9
-                           ),
-                           (
-                               3,
-                               15
-                           ),
-                           (
-                               3,
-                               18
-                           ),
-                           (
-                               3,
-                               22
-                           ),
-                           (
-                               3,
-                               23
-                           ),
-                           (
-                               3,
-                               26
-                           ),
-                           (
-                               3,
-                               27
-                           ),
-                           (
-                               3,
-                               28
-                           ),
-                           (
-                               3,
-                               29
-                           ),
-                           (
-                               3,
-                               30
-                           ),
-                           (
-                               3,
-                               31
-                           ),
-                           (
-                               3,
-                               32
-                           ),
-                           (
-                               3,
-                               34
-                           ),
-                           (
-                               3,
-                               36
-                           ),
-                           (
-                               3,
-                               37
-                           ),
-                           (
-                               3,
-                               38
-                           ),
-                           (
-                               3,
-                               39
-                           ),
-                           (
-                               4,
-                               3
-                           ),
-                           (
-                               4,
-                               13
-                           ),
-                           (
-                               4,
+                               1,
                                16
                            ),
                            (
-                               4,
-                               21
-                           ),
-                           (
-                               4,
-                               22
-                           ),
-                           (
-                               4,
-                               23
-                           ),
-                           (
-                               4,
-                               27
-                           ),
-                           (
-                               4,
-                               29
-                           ),
-                           (
-                               4,
-                               30
-                           ),
-                           (
-                               4,
-                               32
-                           ),
-                           (
-                               4,
-                               34
-                           ),
-                           (
-                               5,
-                               8
-                           ),
-                           (
-                               5,
-                               15
-                           ),
-                           (
-                               5,
-                               18
-                           ),
-                           (
-                               5,
-                               22
-                           ),
-                           (
-                               5,
-                               23
-                           ),
-                           (
-                               5,
-                               27
-                           ),
-                           (
-                               5,
-                               29
-                           ),
-                           (
-                               5,
-                               32
-                           ),
-                           (
-                               5,
-                               35
-                           ),
-                           (
-                               6,
-                               3
-                           ),
-                           (
-                               6,
-                               13
-                           ),
-                           (
-                               6,
-                               16
-                           ),
-                           (
-                               6,
-                               21
-                           ),
-                           (
-                               6,
-                               22
-                           ),
-                           (
-                               6,
-                               23
-                           ),
-                           (
-                               6,
-                               27
-                           ),
-                           (
-                               6,
-                               29
-                           ),
-                           (
-                               6,
-                               30
-                           ),
-                           (
-                               6,
-                               32
-                           ),
-                           (
-                               6,
-                               34
-                           ),
-                           (
-                               7,
-                               2
-                           ),
-                           (
-                               7,
-                               15
-                           ),
-                           (
-                               7,
-                               27
-                           ),
-                           (
-                               7,
-                               29
-                           ),
-                           (
-                               7,
-                               32
-                           ),
-                           (
-                               7,
-                               34
-                           ),
-                           (
-                               7,
-                               35
-                           ),
-                           (
-                               8,
-                               3
-                           ),
-                           (
-                               8,
-                               15
-                           ),
-                           (
-                               8,
-                               18
-                           ),
-                           (
-                               8,
-                               24
-                           ),
-                           (
-                               8,
-                               27
-                           ),
-                           (
-                               8,
-                               29
-                           ),
-                           (
-                               8,
-                               32
-                           ),
-                           (
-                               8,
-                               34
-                           ),
-                           (
-                               8,
-                               35
-                           ),
-                           (
-                               9,
-                               3
-                           ),
-                           (
-                               9,
-                               13
-                           ),
-                           (
-                               9,
-                               27
-                           ),
-                           (
-                               9,
-                               29
-                           ),
-                           (
-                               9,
-                               30
-                           ),
-                           (
-                               9,
-                               32
-                           ),
-                           (
-                               9,
-                               35
-                           ),
-                           (
-                               10,
-                               8
-                           ),
-                           (
-                               10,
-                               15
-                           ),
-                           (
-                               10,
-                               18
-                           ),
-                           (
-                               10,
-                               27
-                           ),
-                           (
-                               10,
-                               29
-                           ),
-                           (
-                               10,
-                               32
-                           ),
-                           (
-                               10,
-                               35
-                           ),
-                           (
-                               11,
-                               2
-                           ),
-                           (
-                               11,
-                               15
-                           ),
-                           (
-                               11,
-                               27
-                           ),
-                           (
-                               11,
-                               29
-                           ),
-                           (
-                               11,
-                               32
-                           ),
-                           (
-                               11,
-                               35
-                           ),
-                           (
-                               12,
-                               3
-                           ),
-                           (
-                               12,
-                               15
-                           ),
-                           (
-                               12,
-                               18
-                           ),
-                           (
-                               12,
-                               27
-                           ),
-                           (
-                               12,
-                               29
-                           ),
-                           (
-                               12,
-                               32
-                           ),
-                           (
-                               12,
-                               35
-                           ),
-                           (
-                               13,
-                               1
-                           ),
-                           (
-                               13,
-                               13
-                           ),
-                           (
-                               13,
-                               18
-                           ),
-                           (
-                               13,
-                               26
-                           ),
-                           (
-                               13,
-                               27
-                           ),
-                           (
-                               13,
-                               28
-                           ),
-                           (
-                               13,
-                               29
-                           ),
-                           (
-                               13,
-                               31
-                           ),
-                           (
-                               13,
-                               35
-                           ),
-                           (
-                               13,
-                               36
-                           ),
-                           (
-                               13,
-                               37
-                           ),
-                           (
-                               13,
-                               38
-                           ),
-                           (
-                               13,
-                               39
-                           ),
-                           (
-                               14,
-                               3
-                           ),
-                           (
-                               14,
-                               15
-                           ),
-                           (
-                               14,
-                               18
-                           ),
-                           (
-                               14,
-                               23
-                           ),
-                           (
-                               14,
-                               27
-                           ),
-                           (
-                               14,
-                               29
-                           ),
-                           (
-                               14,
-                               32
-                           ),
-                           (
-                               14,
-                               34
-                           ),
-                           (
-                               14,
-                               35
-                           ),
-                           (
-                               15,
-                               3
-                           ),
-                           (
-                               15,
-                               13
-                           ),
-                           (
-                               15,
-                               16
-                           ),
-                           (
-                               15,
-                               21
-                           ),
-                           (
-                               15,
-                               22
-                           ),
-                           (
-                               15,
-                               23
-                           ),
-                           (
-                               15,
-                               27
-                           ),
-                           (
-                               15,
-                               29
-                           ),
-                           (
-                               16,
-                               3
-                           ),
-                           (
-                               16,
-                               13
-                           ),
-                           (
-                               16,
-                               27
-                           ),
-                           (
-                               16,
-                               29
-                           ),
-                           (
-                               16,
-                               32
-                           ),
-                           (
-                               16,
-                               34
-                           ),
-                           (
-                               16,
-                               35
-                           ),
-                           (
-                               17,
-                               2
-                           ),
-                           (
-                               17,
-                               15
-                           ),
-                           (
-                               17,
-                               18
-                           ),
-                           (
-                               17,
-                               26
-                           ),
-                           (
-                               17,
-                               27
-                           ),
-                           (
-                               17,
-                               28
-                           ),
-                           (
-                               17,
-                               29
-                           ),
-                           (
-                               17,
-                               31
-                           ),
-                           (
-                               17,
-                               32
-                           ),
-                           (
-                               17,
-                               34
-                           ),
-                           (
-                               17,
-                               35
-                           ),
-                           (
-                               17,
-                               37
-                           ),
-                           (
-                               17,
-                               38
-                           ),
-                           (
-                               17,
-                               39
-                           ),
-                           (
-                               18,
-                               10
-                           ),
-                           (
-                               18,
-                               15
-                           ),
-                           (
-                               18,
-                               18
-                           ),
-                           (
-                               18,
-                               27
-                           ),
-                           (
-                               18,
-                               29
-                           ),
-                           (
-                               18,
-                               32
-                           ),
-                           (
-                               18,
-                               34
-                           ),
-                           (
-                               18,
-                               35
-                           ),
-                           (
-                               19,
-                               1
-                           ),
-                           (
-                               19,
-                               13
-                           ),
-                           (
-                               19,
-                               16
-                           ),
-                           (
-                               19,
+                               1,
                                17
                            ),
                            (
+                               1,
+                               18
+                           ),
+                           (
+                               1,
+                               26
+                           ),
+                           (
+                               1,
+                               27
+                           ),
+                           (
+                               1,
+                               28
+                           ),
+                           (
+                               1,
+                               29
+                           ),
+                           (
+                               1,
+                               31
+                           ),
+                           (
+                               1,
+                               32
+                           ),
+                           (
+                               1,
+                               33
+                           ),
+                           (
+                               1,
+                               34
+                           ),
+                           (
+                               1,
+                               35
+                           ),
+                           (
+                               1,
+                               36
+                           ),
+                           (
+                               1,
+                               37
+                           ),
+                           (
+                               1,
+                               38
+                           ),
+                           (
+                               1,
+                               39
+                           ),
+                           (
+                               2,
+                               10
+                           ),
+                           (
+                               2,
+                               15
+                           ),
+                           (
+                               2,
+                               18
+                           ),
+                           (
+                               2,
+                               27
+                           ),
+                           (
+                               2,
+                               29
+                           ),
+                           (
+                               2,
+                               32
+                           ),
+                           (
+                               2,
+                               34
+                           ),
+                           (
+                               2,
+                               35
+                           ),
+                           (
+                               3,
+                               2
+                           ),
+                           (
+                               3,
+                               15
+                           ),
+                           (
+                               3,
+                               18
+                           ),
+                           (
+                               3,
+                               26
+                           ),
+                           (
+                               3,
+                               27
+                           ),
+                           (
+                               3,
+                               28
+                           ),
+                           (
+                               3,
+                               29
+                           ),
+                           (
+                               3,
+                               31
+                           ),
+                           (
+                               3,
+                               32
+                           ),
+                           (
+                               3,
+                               34
+                           ),
+                           (
+                               3,
+                               35
+                           ),
+                           (
+                               3,
+                               37
+                           ),
+                           (
+                               3,
+                               38
+                           ),
+                           (
+                               3,
+                               39
+                           ),
+                           (
+                               4,
+                               3
+                           ),
+                           (
+                               4,
+                               13
+                           ),
+                           (
+                               4,
+                               27
+                           ),
+                           (
+                               4,
+                               29
+                           ),
+                           (
+                               4,
+                               32
+                           ),
+                           (
+                               4,
+                               34
+                           ),
+                           (
+                               4,
+                               35
+                           ),
+                           (
+                               5,
+                               3
+                           ),
+                           (
+                               5,
+                               13
+                           ),
+                           (
+                               5,
+                               16
+                           ),
+                           (
+                               5,
+                               21
+                           ),
+                           (
+                               5,
+                               22
+                           ),
+                           (
+                               5,
+                               23
+                           ),
+                           (
+                               5,
+                               27
+                           ),
+                           (
+                               5,
+                               29
+                           ),
+                           (
+                               6,
+                               3
+                           ),
+                           (
+                               6,
+                               15
+                           ),
+                           (
+                               6,
+                               18
+                           ),
+                           (
+                               6,
+                               23
+                           ),
+                           (
+                               6,
+                               27
+                           ),
+                           (
+                               6,
+                               29
+                           ),
+                           (
+                               6,
+                               32
+                           ),
+                           (
+                               6,
+                               34
+                           ),
+                           (
+                               6,
+                               35
+                           ),
+                           (
+                               7,
+                               1
+                           ),
+                           (
+                               7,
+                               13
+                           ),
+                           (
+                               7,
+                               18
+                           ),
+                           (
+                               7,
+                               26
+                           ),
+                           (
+                               7,
+                               27
+                           ),
+                           (
+                               7,
+                               28
+                           ),
+                           (
+                               7,
+                               29
+                           ),
+                           (
+                               7,
+                               31
+                           ),
+                           (
+                               7,
+                               35
+                           ),
+                           (
+                               7,
+                               36
+                           ),
+                           (
+                               7,
+                               37
+                           ),
+                           (
+                               7,
+                               38
+                           ),
+                           (
+                               7,
+                               39
+                           ),
+                           (
+                               8,
+                               3
+                           ),
+                           (
+                               8,
+                               15
+                           ),
+                           (
+                               8,
+                               18
+                           ),
+                           (
+                               8,
+                               27
+                           ),
+                           (
+                               8,
+                               29
+                           ),
+                           (
+                               8,
+                               32
+                           ),
+                           (
+                               8,
+                               35
+                           ),
+                           (
+                               9,
+                               2
+                           ),
+                           (
+                               9,
+                               15
+                           ),
+                           (
+                               9,
+                               27
+                           ),
+                           (
+                               9,
+                               29
+                           ),
+                           (
+                               9,
+                               32
+                           ),
+                           (
+                               9,
+                               35
+                           ),
+                           (
+                               10,
+                               8
+                           ),
+                           (
+                               10,
+                               15
+                           ),
+                           (
+                               10,
+                               18
+                           ),
+                           (
+                               10,
+                               27
+                           ),
+                           (
+                               10,
+                               29
+                           ),
+                           (
+                               10,
+                               32
+                           ),
+                           (
+                               10,
+                               35
+                           ),
+                           (
+                               11,
+                               3
+                           ),
+                           (
+                               11,
+                               13
+                           ),
+                           (
+                               11,
+                               27
+                           ),
+                           (
+                               11,
+                               29
+                           ),
+                           (
+                               11,
+                               30
+                           ),
+                           (
+                               11,
+                               32
+                           ),
+                           (
+                               11,
+                               35
+                           ),
+                           (
+                               12,
+                               3
+                           ),
+                           (
+                               12,
+                               15
+                           ),
+                           (
+                               12,
+                               18
+                           ),
+                           (
+                               12,
+                               24
+                           ),
+                           (
+                               12,
+                               27
+                           ),
+                           (
+                               12,
+                               29
+                           ),
+                           (
+                               12,
+                               32
+                           ),
+                           (
+                               12,
+                               34
+                           ),
+                           (
+                               12,
+                               35
+                           ),
+                           (
+                               13,
+                               2
+                           ),
+                           (
+                               13,
+                               15
+                           ),
+                           (
+                               13,
+                               27
+                           ),
+                           (
+                               13,
+                               29
+                           ),
+                           (
+                               13,
+                               32
+                           ),
+                           (
+                               13,
+                               34
+                           ),
+                           (
+                               13,
+                               35
+                           ),
+                           (
+                               14,
+                               4
+                           ),
+                           (
+                               14,
+                               5
+                           ),
+                           (
+                               14,
+                               11
+                           ),
+                           (
+                               14,
+                               13
+                           ),
+                           (
+                               14,
+                               18
+                           ),
+                           (
+                               14,
+                               19
+                           ),
+                           (
+                               14,
+                               20
+                           ),
+                           (
+                               14,
+                               26
+                           ),
+                           (
+                               14,
+                               27
+                           ),
+                           (
+                               14,
+                               28
+                           ),
+                           (
+                               14,
+                               29
+                           ),
+                           (
+                               14,
+                               31
+                           ),
+                           (
+                               14,
+                               32
+                           ),
+                           (
+                               14,
+                               33
+                           ),
+                           (
+                               14,
+                               34
+                           ),
+                           (
+                               14,
+                               36
+                           ),
+                           (
+                               14,
+                               37
+                           ),
+                           (
+                               14,
+                               38
+                           ),
+                           (
+                               14,
+                               39
+                           ),
+                           (
+                               15,
+                               3
+                           ),
+                           (
+                               15,
+                               13
+                           ),
+                           (
+                               15,
+                               16
+                           ),
+                           (
+                               15,
+                               21
+                           ),
+                           (
+                               15,
+                               22
+                           ),
+                           (
+                               15,
+                               23
+                           ),
+                           (
+                               15,
+                               27
+                           ),
+                           (
+                               15,
+                               29
+                           ),
+                           (
+                               15,
+                               30
+                           ),
+                           (
+                               15,
+                               32
+                           ),
+                           (
+                               15,
+                               34
+                           ),
+                           (
+                               16,
+                               8
+                           ),
+                           (
+                               16,
+                               15
+                           ),
+                           (
+                               16,
+                               18
+                           ),
+                           (
+                               16,
+                               22
+                           ),
+                           (
+                               16,
+                               23
+                           ),
+                           (
+                               16,
+                               27
+                           ),
+                           (
+                               16,
+                               29
+                           ),
+                           (
+                               16,
+                               32
+                           ),
+                           (
+                               16,
+                               35
+                           ),
+                           (
+                               17,
+                               3
+                           ),
+                           (
+                               17,
+                               13
+                           ),
+                           (
+                               17,
+                               16
+                           ),
+                           (
+                               17,
+                               21
+                           ),
+                           (
+                               17,
+                               22
+                           ),
+                           (
+                               17,
+                               23
+                           ),
+                           (
+                               17,
+                               27
+                           ),
+                           (
+                               17,
+                               29
+                           ),
+                           (
+                               17,
+                               30
+                           ),
+                           (
+                               17,
+                               32
+                           ),
+                           (
+                               17,
+                               34
+                           ),
+                           (
+                               18,
+                               3
+                           ),
+                           (
+                               18,
+                               8
+                           ),
+                           (
+                               18,
+                               9
+                           ),
+                           (
+                               18,
+                               15
+                           ),
+                           (
+                               18,
+                               18
+                           ),
+                           (
+                               18,
+                               22
+                           ),
+                           (
+                               18,
+                               23
+                           ),
+                           (
+                               18,
+                               26
+                           ),
+                           (
+                               18,
+                               27
+                           ),
+                           (
+                               18,
+                               28
+                           ),
+                           (
+                               18,
+                               29
+                           ),
+                           (
+                               18,
+                               30
+                           ),
+                           (
+                               18,
+                               31
+                           ),
+                           (
+                               18,
+                               32
+                           ),
+                           (
+                               18,
+                               34
+                           ),
+                           (
+                               18,
+                               36
+                           ),
+                           (
+                               18,
+                               37
+                           ),
+                           (
+                               18,
+                               38
+                           ),
+                           (
+                               18,
+                               39
+                           ),
+                           (
+                               19,
+                               1
+                           ),
+                           (
+                               19,
+                               3
+                           ),
+                           (
+                               19,
+                               4
+                           ),
+                           (
+                               19,
+                               5
+                           ),
+                           (
+                               19,
+                               11
+                           ),
+                           (
+                               19,
+                               12
+                           ),
+                           (
+                               19,
+                               13
+                           ),
+                           (
+                               19,
+                               15
+                           ),
+                           (
                                19,
                                18
+                           ),
+                           (
+                               19,
+                               22
                            ),
                            (
                                19,
@@ -1145,23 +1204,15 @@ INSERT INTO project_skills (
                            ),
                            (
                                19,
+                               30
+                           ),
+                           (
+                               19,
                                31
                            ),
                            (
                                19,
                                32
-                           ),
-                           (
-                               19,
-                               33
-                           ),
-                           (
-                               19,
-                               34
-                           ),
-                           (
-                               19,
-                               35
                            ),
                            (
                                19,
@@ -1181,15 +1232,7 @@ INSERT INTO project_skills (
                            ),
                            (
                                20,
-                               4
-                           ),
-                           (
-                               20,
-                               5
-                           ),
-                           (
-                               20,
-                               11
+                               3
                            ),
                            (
                                20,
@@ -1197,19 +1240,23 @@ INSERT INTO project_skills (
                            ),
                            (
                                20,
-                               18
+                               16
                            ),
                            (
                                20,
-                               19
+                               21
                            ),
                            (
                                20,
-                               20
+                               22
                            ),
                            (
                                20,
-                               26
+                               23
+                           ),
+                           (
+                               20,
+                               25
                            ),
                            (
                                20,
@@ -1217,15 +1264,11 @@ INSERT INTO project_skills (
                            ),
                            (
                                20,
-                               28
-                           ),
-                           (
-                               20,
                                29
                            ),
                            (
                                20,
-                               31
+                               30
                            ),
                            (
                                20,
@@ -1233,30 +1276,110 @@ INSERT INTO project_skills (
                            ),
                            (
                                20,
-                               33
-                           ),
-                           (
-                               20,
                                34
                            ),
                            (
-                               20,
-                               36
+                               21,
+                               1
                            ),
                            (
-                               20,
-                               37
+                               21,
+                               4
                            ),
                            (
-                               20,
-                               38
+                               21,
+                               5
                            ),
                            (
-                               20,
-                               39
+                               21,
+                               6
+                           ),
+                           (
+                               21,
+                               11
+                           ),
+                           (
+                               21,
+                               13
+                           ),
+                           (
+                               21,
+                               15
+                           ),
+                           (
+                               21,
+                               17
+                           ),
+                           (
+                               21,
+                               18
+                           ),
+                           (
+                               21,
+                               19
+                           ),
+                           (
+                               21,
+                               27
+                           ),
+                           (
+                               21,
+                               32
+                           ),
+                           (
+                               21,
+                               33
+                           ),
+                           (
+                               21,
+                               34
+                           ),
+                           (
+                               21,
+                               35
+                           ),
+                           (
+                               22,
+                               2
+                           ),
+                           (
+                               22,
+                               10
+                           ),
+                           (
+                               22,
+                               15
+                           ),
+                           (
+                               22,
+                               18
+                           ),
+                           (
+                               22,
+                               19
+                           ),
+                           (
+                               22,
+                               27
+                           ),
+                           (
+                               22,
+                               32
+                           ),
+                           (
+                               22,
+                               33
+                           ),
+                           (
+                               22,
+                               34
+                           ),
+                           (
+                               22,
+                               35
                            );
-
 -- Courses Entries
+
 INSERT INTO courses (
                         education_id,
                         course_name,
