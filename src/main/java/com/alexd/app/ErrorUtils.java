@@ -10,11 +10,19 @@ import io.javalin.http.Context;
  * Provides a consistent error model and response status for the error template.
  */
 public class ErrorUtils {
-    public static void renderError(Context context, int status, String title, String message) {
+    public static void renderDatabaseError(Context context, int status) {
         HashMap<String, Object> errorModel = new HashMap<>();
         errorModel.put("status", status);
-        errorModel.put("title", title);
-        errorModel.put("message", message);
+        errorModel.put("title", "Database Error");
+        errorModel.put("message", "Unable to connect to the database. Please try again later.");
+        context.status(status).render("templates/error.html", errorModel);
+    }
+
+    public static void renderApplicationError(Context context, int status) {
+        HashMap<String, Object> errorModel = new HashMap<>();
+        errorModel.put("status", status);
+        errorModel.put("title", "Application Error");
+        errorModel.put("message", "Something went wrong on my end. Please try again later.");
         context.status(status).render("templates/error.html", errorModel);
     }
 }

@@ -33,12 +33,11 @@ public class App {
             config.routes.post(PageContact.CONTACT_URL, new PageContactSubmit());
             config.routes.exception(SQLException.class, (e, context) -> {
                 System.err.println(e.getMessage());
-                ErrorUtils.renderError(context, 500, "Database Error",
-                        "Unable to connect to the database. Please try again later.");
+                ErrorUtils.renderDatabaseError(context, 500);
             });
             config.routes.exception(Exception.class, (e, context) -> {
                 System.err.println(e.getMessage());
-                ErrorUtils.renderError(context, 500, "Application Error", "Something went wrong on our end.");
+                ErrorUtils.renderApplicationError(context, 500);
             });
         }).start(JAVALIN_PORT);
     }
