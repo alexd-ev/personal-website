@@ -11,9 +11,9 @@ It runs a series of queries to do lookups to render the data on the website. Ini
 ![Contact page Screenshot](src/main/resources/public/images/contact-page.png)
 
 ## Technical Specification
-To open the website, [JRE 25+](https://jdk.java.net/java-se-ri/25) is required. If an earlier version must be used, then build and run the code as below, though this requires the full JDK. Download the released `alexds-personal-website-1.0.0.zip` archive found here: https://github.com/alexd-ev/personal-website/releases/latest. Extract the files then run the application using Java by running this command in a terminal:
+To open the website, [JRE 25+](https://jdk.java.net/java-se-ri/25) is required. If an earlier version must be used, then build and run the code as below, though this requires the full JDK. Download the latest released `alexds-personal-website-1.1.0.zip` archive found here: https://github.com/alexd-ev/personal-website/releases/latest. Extract the files then run the application using Java by running this command in a terminal:
 ```bash
-java --enable-native-access=ALL-UNNAMED -jar alexds-personal-website-1.0.0.jar
+java --enable-native-access=ALL-UNNAMED -jar alexds-personal-website-1.1.0.jar
 ```
 Go to: http://localhost:7001/
 
@@ -101,7 +101,7 @@ Go to: http://localhost:7001/
 # Packaging the Code
 ```bash
 mvn package
-java --enable-native-access=ALL-UNNAMED -jar target/personal-website-1.0.0.jar
+java --enable-native-access=ALL-UNNAMED -jar target/personal-website-1.1.0.jar
 ```
 
 # Author
