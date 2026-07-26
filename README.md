@@ -99,6 +99,7 @@ devcontainer exec --workspace-folder . mvn exec:java
 Go to: http://localhost:7001/
 
 # Packaging the Code
+Package via IDE or run:
 ```bash
 mvn package
 java --enable-native-access=ALL-UNNAMED -jar target/personal-website-1.1.0.jar
