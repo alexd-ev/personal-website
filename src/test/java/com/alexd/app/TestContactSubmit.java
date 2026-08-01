@@ -99,4 +99,12 @@ class TestContactSubmit {
         String invalidEmailError = URLEncoder.encode("Please enter a valid email address.", StandardCharsets.UTF_8);
         verify(context).redirect("/contact?error=" + invalidEmailError);
     }
+
+    @Test
+    void testHoneypotSpam() throws Exception {
+        when(context.formParam("website")).thenReturn("http://spammy-site.com");
+        controller.handle(context);
+        String spamError = URLEncoder.encode("Spam detected.", StandardCharsets.UTF_8);
+        verify(context).redirect("/contact?error=" + spamError);
+    }
 }
