@@ -107,4 +107,14 @@ class TestContactSubmit {
         String spamError = URLEncoder.encode("Spam detected.", StandardCharsets.UTF_8);
         verify(context).redirect("/contact?error=" + spamError);
     }
+
+    @Test
+    void testCSRFSessionInvalidContactSubmit() throws Exception {
+        when(context.sessionAttribute("csrfToken")).thenReturn("valid-session-token");
+        when(context.formParam("_csrf")).thenReturn("hacker-form-token");
+        when(context.formParam("website")).thenReturn("");
+        controller.handle(context);
+        String invalidError = URLEncoder.encode("Invalid form submission.", StandardCharsets.UTF_8);
+        verify(context).redirect("/contact?error=" + invalidError);
+    }
 }
