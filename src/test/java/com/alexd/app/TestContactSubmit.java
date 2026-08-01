@@ -84,4 +84,19 @@ class TestContactSubmit {
                 StandardCharsets.UTF_8);
         verify(context).redirect("/contact?error=" + fieldsEmptyError);
     }
+
+    @Test
+    void testEmailInvalidContactSubmit() throws Exception {
+        when(context.formParam("name")).thenReturn("Alex");
+        when(context.formParam("email")).thenReturn("invalid-email");
+        when(context.formParam("subject")).thenReturn("");
+        when(context.formParam("message")).thenReturn("Hello, this is a test message.");
+        when(context.formParam("website")).thenReturn("");
+        String fakeToken = "abc-123-xyz";
+        when(context.sessionAttribute("csrfToken")).thenReturn(fakeToken);
+        when(context.formParam("_csrf")).thenReturn(fakeToken);
+        controller.handle(context);
+        String invalidEmailError = URLEncoder.encode("Please enter a valid email address.", StandardCharsets.UTF_8);
+        verify(context).redirect("/contact?error=" + invalidEmailError);
+    }
 }
