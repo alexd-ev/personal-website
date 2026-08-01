@@ -2,6 +2,9 @@ package com.alexd.app;
 
 import io.javalin.http.Context;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -32,5 +35,53 @@ class TestContactSubmit {
         when(context.formParam("_csrf")).thenReturn(fakeToken);
         controller.handle(context);
         verify(context).redirect("/contact?success=true");
+    }
+
+    @Test
+    void testNameEmptyContactSubmit() throws Exception {
+        when(context.formParam("name")).thenReturn("");
+        when(context.formParam("email")).thenReturn("alex@example.com");
+        when(context.formParam("subject")).thenReturn("");
+        when(context.formParam("message")).thenReturn("Hello, this is a test message.");
+        when(context.formParam("website")).thenReturn("");
+        String fakeToken = "abc-123-xyz";
+        when(context.sessionAttribute("csrfToken")).thenReturn(fakeToken);
+        when(context.formParam("_csrf")).thenReturn(fakeToken);
+        controller.handle(context);
+        String fieldsEmptyError = URLEncoder.encode("Name, email, and message are required fields.",
+                StandardCharsets.UTF_8);
+        verify(context).redirect("/contact?error=" + fieldsEmptyError);
+    }
+
+    @Test
+    void testEmailEmptyContactSubmit() throws Exception {
+        when(context.formParam("name")).thenReturn("Alex");
+        when(context.formParam("email")).thenReturn("");
+        when(context.formParam("subject")).thenReturn("");
+        when(context.formParam("message")).thenReturn("Hello, this is a test message.");
+        when(context.formParam("website")).thenReturn("");
+        String fakeToken = "abc-123-xyz";
+        when(context.sessionAttribute("csrfToken")).thenReturn(fakeToken);
+        when(context.formParam("_csrf")).thenReturn(fakeToken);
+        controller.handle(context);
+        String fieldsEmptyError = URLEncoder.encode("Name, email, and message are required fields.",
+                StandardCharsets.UTF_8);
+        verify(context).redirect("/contact?error=" + fieldsEmptyError);
+    }
+
+    @Test
+    void testMessageEmptyContactSubmit() throws Exception {
+        when(context.formParam("name")).thenReturn("Alex");
+        when(context.formParam("email")).thenReturn("");
+        when(context.formParam("subject")).thenReturn("");
+        when(context.formParam("message")).thenReturn("");
+        when(context.formParam("website")).thenReturn("");
+        String fakeToken = "abc-123-xyz";
+        when(context.sessionAttribute("csrfToken")).thenReturn(fakeToken);
+        when(context.formParam("_csrf")).thenReturn(fakeToken);
+        controller.handle(context);
+        String fieldsEmptyError = URLEncoder.encode("Name, email, and message are required fields.",
+                StandardCharsets.UTF_8);
+        verify(context).redirect("/contact?error=" + fieldsEmptyError);
     }
 }
