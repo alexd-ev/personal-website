@@ -1,0 +1,32 @@
+name: Java Contact Submission Test Workflow
+run-name: Running Contact Submission tests
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+concurrency:                        # Prevent duplicate workflow runs for the same branch/PR
+    group: java-contact-submission-tests-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    java-test:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read          # Minimal permission for checkout
+        steps:
+            - name: Check out repository code
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 1    # Fetch only the latest commit to reduce workflow run time
+
+            - name: Set up Java
+              uses: actions/setup-java@v4
+              with:
+                  distribution: temurin
+                  java-version: '25'
+                  cache: maven
+
+            - name: Run Maven tests
+              run: mvn --batch-mode test
