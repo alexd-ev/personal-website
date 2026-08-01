@@ -25,12 +25,15 @@ class TestContactSubmit {
 
     @Test
     void testSuccessfulContactSubmit() throws Exception {
+        // A valid request should redirect the user to the success state.
         setupValidSecurityAndHoneypot();
         when(context.formParam("name")).thenReturn("Alex");
         when(context.formParam("email")).thenReturn("alex@example.com");
         when(context.formParam("subject")).thenReturn("");
         when(context.formParam("message")).thenReturn("Hello, this is a test message.");
+
         controller.handle(context);
+
         verify(context).redirect("/contact?success=true");
     }
 
@@ -41,10 +44,10 @@ class TestContactSubmit {
         when(context.formParam("email")).thenReturn("alex@example.com");
         when(context.formParam("subject")).thenReturn("");
         when(context.formParam("message")).thenReturn("Hello, this is a test message.");
+
         controller.handle(context);
-        String fieldsEmptyError = URLEncoder.encode("Name, email, and message are required fields.",
-                StandardCharsets.UTF_8);
-        verify(context).redirect("/contact?error=" + fieldsEmptyError);
+
+        assertRedirectedWithError("Name, email, and message are required fields.");
     }
 
     @Test
@@ -54,10 +57,10 @@ class TestContactSubmit {
         when(context.formParam("email")).thenReturn("");
         when(context.formParam("subject")).thenReturn("");
         when(context.formParam("message")).thenReturn("Hello, this is a test message.");
+
         controller.handle(context);
-        String fieldsEmptyError = URLEncoder.encode("Name, email, and message are required fields.",
-                StandardCharsets.UTF_8);
-        verify(context).redirect("/contact?error=" + fieldsEmptyError);
+
+        assertRedirectedWithError("Name, email, and message are required fields.");
     }
 
     @Test
@@ -68,10 +71,10 @@ class TestContactSubmit {
         when(context.formParam("subject")).thenReturn("");
         when(context.formParam("message")).thenReturn("");
         when(context.formParam("website")).thenReturn("");
+
         controller.handle(context);
-        String fieldsEmptyError = URLEncoder.encode("Name, email, and message are required fields.",
-                StandardCharsets.UTF_8);
-        verify(context).redirect("/contact?error=" + fieldsEmptyError);
+
+        assertRedirectedWithError("Name, email, and message are required fields.");
     }
 
     @Test
@@ -81,33 +84,44 @@ class TestContactSubmit {
         when(context.formParam("email")).thenReturn("invalid-email");
         when(context.formParam("subject")).thenReturn("");
         when(context.formParam("message")).thenReturn("Hello, this is a test message.");
+
         controller.handle(context);
-        String invalidEmailError = URLEncoder.encode("Please enter a valid email address.", StandardCharsets.UTF_8);
-        verify(context).redirect("/contact?error=" + invalidEmailError);
+
+        assertRedirectedWithError("Please enter a valid email address.");
     }
 
     @Test
     void testHoneypotSpam() throws Exception {
+        // The honeypot field should trigger spam handling immediately.
         when(context.formParam("website")).thenReturn("http://spammy-site.com");
+
         controller.handle(context);
-        String spamError = URLEncoder.encode("Spam detected.", StandardCharsets.UTF_8);
-        verify(context).redirect("/contact?error=" + spamError);
+
+        assertRedirectedWithError("Spam detected.");
     }
 
     @Test
     void testCSRFSessionInvalidContactSubmit() throws Exception {
+        // A mismatched CSRF token should be rejected before any persistence happens.
         when(context.sessionAttribute("csrfToken")).thenReturn("valid-session-token");
         when(context.formParam("_csrf")).thenReturn("hacker-form-token");
         when(context.formParam("website")).thenReturn("");
+
         controller.handle(context);
-        String invalidError = URLEncoder.encode("Invalid form submission.", StandardCharsets.UTF_8);
-        verify(context).redirect("/contact?error=" + invalidError);
+
+        assertRedirectedWithError("Invalid form submission.");
     }
 
     private void setupValidSecurityAndHoneypot() {
+        // Shared setup for tests that exercise the normal validation path.
         when(context.formParam("website")).thenReturn("");
         String fakeToken = "abc-123-xyz";
         when(context.sessionAttribute("csrfToken")).thenReturn(fakeToken);
         when(context.formParam("_csrf")).thenReturn(fakeToken);
+    }
+
+    private void assertRedirectedWithError(String message) {
+        String encodedMessage = URLEncoder.encode(message, StandardCharsets.UTF_8);
+        verify(context).redirect("/contact?error=" + encodedMessage);
     }
 }
