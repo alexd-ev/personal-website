@@ -236,6 +236,68 @@ INSERT INTO projects (
                          'My Minecraft classic skyblock island generator project',
                          'https://github.com/alexd-ev/skyblock-generator'
                      );
+
+INSERT INTO projects (
+                         title,
+                         description,
+                         github_url,
+                         education_id
+                     )
+                     VALUES (
+                         'Project Bootstrapping - Garage Basic',
+                         'Quickly (within 2 weeks) designed and developed a team page feature as a team',
+                         'https://github.com/Alex-D-4089452/garage-basic-22-nbn',
+                         1
+                     ),
+                     (
+                         'Pre-processing and Feature Engineering',
+                         'Developed a document pre-processing pipeline to maximise retrieval Hit@1 and Hit@5 scores',
+                         'https://github.com/alex-dav/Pre-processing-and-Feature-Engineering',
+                         1
+                     ),
+                     (
+                         'Search Engine Implementation',
+                         'Built a serialised index package containing and a custom ranker combining lexical sparse and dense for ranking',
+                         'https://github.com/alex-dav/Search-Engine-Implementation',
+                         1
+                     ),
+                     (
+                         'Drone Image Classification',
+                         'Implemented a capacity restricted CNN model for classifying image frames, that a drone would need to employ',
+                         'https://github.com/alex-dav/Drone-Image-Classification',
+                         1
+                     ),
+                     (
+                         'relay (AI Canva NBN)',
+                         'Working AI pipeline for handoff and collaboration to maintain shared AI context amongst users',
+                         'https://github.com/Alex-D-4089452/ai-canva-22-nbn',
+                         1
+                     ),
+                     (
+                         'Text Classification',
+                         'Classified meme text as using 0 or up to 20 propadanda techniques on a T4 GPU',
+                         'https://github.com/alex-dav/Text-Classification',
+                         1
+                     ),
+                     (
+                         'SkillConnect - Home Cooks',
+                         'In a team of 6, developed a service marketplace web app for home cooks and enthusiasts who want to learn to cook',
+                         NULL,
+                         1
+                     ),
+                     (
+                         'Retrieval-Augmented LLM System for Automated Web Data Analysis',
+                         'Built a dense ranker and a RRF ranker and compared performance between them and used an LLM judge for judging',
+                         'https://github.com/alex-dav/Retrieval-Augmented-LLM-System-for-Automated-Web-Data-Analysis',
+                         1
+                     ),
+                     (
+                         'Feature Implementation - Garage Basic',
+                         'Implemented a new sharing feature on top of the existing notes feature showcasing user centred design and development',
+                         'https://github.com/Alex-D-4089452/garage-basic-feature-implementation',
+                         1
+                     );
+
 -- Skills Entries
 
 INSERT INTO skills (
@@ -1401,6 +1463,30 @@ INSERT INTO courses (
                         completion_date
                     )
                     VALUES (
+                        1,
+                        'Deep Learning',
+                        'COSC2779',
+                        '2026-11'
+                    ),
+                    (
+                        1,
+                        'Managing Semi-structured and Unstructured Data',
+                        'ISYS1079',
+                        '2026-11'
+                    ),
+                    (
+                        1,
+                        'Programming Project',
+                        'COSC2408',
+                        '2026-11'
+                    ),
+                    (
+                        1,
+                        'Software Engineering: Process and Tools',
+                        'COSC2299',
+                        '2026-11'
+                    ),
+                    (
                         1,
                         'Cloud Computing',
                         'COSC2626',
