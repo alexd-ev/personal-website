@@ -26,20 +26,6 @@ INSERT INTO experience (
                            '2024-12',
                            '2025-01',
                            'Gained an understanding of map analysis techniques, such as accuracy of precise location of queried results'
-                       ),
-                       (
-                           'Longhurst''s Bakery',
-                           'Packing Assistant',
-                           '2022-11',
-                           '2022-11',
-                           'Assisted in packing bagels for delivery to nearby shops'
-                       ),
-                       (
-                           'Burgertory',
-                           'Assistant Cashier',
-                           '2021-12',
-                           '2021-12',
-                           'Assisted in taking and serving orders and cleaned trays'
                        );
 -- Education Entries
 
