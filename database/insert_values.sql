@@ -7,6 +7,13 @@ INSERT INTO experience (
                            description
                        )
                        VALUES (
+                           'V2 AI',
+                           'AI Engineer Intern',
+                           '2026-09',
+                           NULL,
+                           'Building real-world agentic solutions and working through the Anthropic Claude certifications and its courses.'
+                       ),
+                       (
                            'Accenture',
                            'Tech Bootcamp Participant',
                            '2026-02',
@@ -55,6 +62,13 @@ INSERT INTO education (
                           'VCE',
                           NULL,
                           '2020-02',
+                          '2023-11'
+                      ),
+                      (
+                          'Centre for Higher Education Studies',
+                          'VCE',
+                          NULL,
+                          '2023-02',
                           '2023-11'
                       ),
                       (
